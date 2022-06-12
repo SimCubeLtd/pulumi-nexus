@@ -1,0 +1,85 @@
+Error: error calculating version: getting language versions: error resolving commitish to reference: reference not found
+Usage:
+  pulumictl get version [flags]
+
+Flags:
+  -h, --help                    help for version
+      --is-prerelease           whether this is a pre-release version
+  -p, --language string         the platform for which the version should be output.
+  -o, --omit-commit-hash        whether to include or omit the commit hash in the version
+  -r, --repo string             path to repository, defaults to current working directory
+      --tag-pattern string      regex pattern to filter tags with (e.g. ^sdk/)
+      --version-prefix string   the version prefix (e.g. 3.0.0). Must be valid semver.
+
+Global Flags:
+  -D, --debug          enable debug logging
+  -t, --token string   a github token to use for making API calls to GitHub.
+
+error calculating version: getting language versions: error resolving commitish to reference: reference not foundError: error calculating version: getting language versions: error resolving commitish to reference: reference not found
+Usage:
+  pulumictl get version [flags]
+
+Flags:
+  -h, --help                    help for version
+      --is-prerelease           whether this is a pre-release version
+  -p, --language string         the platform for which the version should be output.
+  -o, --omit-commit-hash        whether to include or omit the commit hash in the version
+  -r, --repo string             path to repository, defaults to current working directory
+      --tag-pattern string      regex pattern to filter tags with (e.g. ^sdk/)
+      --version-prefix string   the version prefix (e.g. 3.0.0). Must be valid semver.
+
+Global Flags:
+  -D, --debug          enable debug logging
+  -t, --token string   a github token to use for making API calls to GitHub.
+
+error calculating version: getting language versions: error resolving commitish to reference: reference not foundError: error calculating version: getting language versions: error resolving commitish to reference: reference not found
+Usage:
+  pulumictl get version [flags]
+
+Flags:
+  -h, --help                    help for version
+      --is-prerelease           whether this is a pre-release version
+  -p, --language string         the platform for which the version should be output.
+  -o, --omit-commit-hash        whether to include or omit the commit hash in the version
+  -r, --repo string             path to repository, defaults to current working directory
+      --tag-pattern string      regex pattern to filter tags with (e.g. ^sdk/)
+      --version-prefix string   the version prefix (e.g. 3.0.0). Must be valid semver.
+
+Global Flags:
+  -D, --debug          enable debug logging
+  -t, --token string   a github token to use for making API calls to GitHub.
+
+error calculating version: getting language versions: error resolving commitish to reference: reference not foundError: error calculating version: getting language versions: error resolving commitish to reference: reference not found
+Usage:
+  pulumictl get version [flags]
+
+Flags:
+  -h, --help                    help for version
+      --is-prerelease           whether this is a pre-release version
+  -p, --language string         the platform for which the version should be output.
+  -o, --omit-commit-hash        whether to include or omit the commit hash in the version
+  -r, --repo string             path to repository, defaults to current working directory
+      --tag-pattern string      regex pattern to filter tags with (e.g. ^sdk/)
+      --version-prefix string   the version prefix (e.g. 3.0.0). Must be valid semver.
+
+Global Flags:
+  -D, --debug          enable debug logging
+  -t, --token string   a github token to use for making API calls to GitHub.
+
+error calculating version: getting language versions: error resolving commitish to reference: reference not found
+if test -z "Code"; then echo "NAME not set"; exit 1; fi
+if test -z ""; then echo "REPOSITORY not set"; exit 1; fi
+if test ! -d "provider/cmd/pulumi-tfgen-x""yz"; then "Project already prepared"; exit 1; fi
+mv "provider/cmd/pulumi-tfgen-x""yz" provider/cmd/pulumi-tfgen-Code
+mv "provider/cmd/pulumi-resource-x""yz" provider/cmd/pulumi-resource-Code
+if [[ "Linux" != "Darwin" ]]; then \
+	sed -i 's,github.com/SimCubeLtd/pulumi-nexus,,g' provider/go.mod; \
+	find ./ ! -path './.git/*' -type f -exec sed -i 's/[x]yz/Code/g' {} \; &> /dev/null; \
+fi
+# In MacOS the -i parameter needs an empty string to execute in place.
+if [[ "Linux" == "Darwin" ]]; then \
+	sed -i '' 's,github.com/SimCubeLtd/pulumi-nexus,,g' provider/go.mod; \
+	find ./ ! -path './.git/*' -type f -exec sed -i '' 's/[x]yz/Code/g' {} \; &> /dev/null; \
+fi
+make: Leaving directory '/home/prom3theu5/pulumi-nexus'
+ 

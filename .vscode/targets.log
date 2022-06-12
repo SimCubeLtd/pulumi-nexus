@@ -1,0 +1,555 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+Error: error calculating version: getting language versions: error resolving commitish to reference: reference not found
+
+Usage:
+  pulumictl get version [flags]
+
+Flags:
+  -h, --help                    help for version
+      --is-prerelease           whether this is a pre-release version
+  -p, --language string         the platform for which the version should be output.
+  -o, --omit-commit-hash        whether to include or omit the commit hash in the version
+  -r, --repo string             path to repository, defaults to current working directory
+      --tag-pattern string      regex pattern to filter tags with (e.g. ^sdk/)
+      --version-prefix string   the version prefix (e.g. 3.0.0). Must be valid semver.
+
+Global Flags:
+  -D, --debug          enable debug logging
+  -t, --token string   a github token to use for making API calls to GitHub.
+
+error calculating version: getting language versions: error resolving commitish to reference: reference not found
+Error: error calculating version: getting language versions: error resolving commitish to reference: reference not found
+
+Usage:
+  pulumictl get version [flags]
+
+Flags:
+  -h, --help                    help for version
+      --is-prerelease           whether this is a pre-release version
+  -p, --language string         the platform for which the version should be output.
+  -o, --omit-commit-hash        whether to include or omit the commit hash in the version
+  -r, --repo string             path to repository, defaults to current working directory
+      --tag-pattern string      regex pattern to filter tags with (e.g. ^sdk/)
+      --version-prefix string   the version prefix (e.g. 3.0.0). Must be valid semver.
+
+Global Flags:
+  -D, --debug          enable debug logging
+  -t, --token string   a github token to use for making API calls to GitHub.
+
+error calculating version: getting language versions: error resolving commitish to reference: reference not found
+Error: error calculating version: getting language versions: error resolving commitish to reference: reference not found
+
+Usage:
+  pulumictl get version [flags]
+
+Flags:
+  -h, --help                    help for version
+      --is-prerelease           whether this is a pre-release version
+  -p, --language string         the platform for which the version should be output.
+  -o, --omit-commit-hash        whether to include or omit the commit hash in the version
+  -r, --repo string             path to repository, defaults to current working directory
+      --tag-pattern string      regex pattern to filter tags with (e.g. ^sdk/)
+      --version-prefix string   the version prefix (e.g. 3.0.0). Must be valid semver.
+
+Global Flags:
+  -D, --debug          enable debug logging
+  -t, --token string   a github token to use for making API calls to GitHub.
+
+error calculating version: getting language versions: error resolving commitish to reference: reference not found
+Error: error calculating version: getting language versions: error resolving commitish to reference: reference not found
+
+Usage:
+  pulumictl get version [flags]
+
+Flags:
+  -h, --help                    help for version
+      --is-prerelease           whether this is a pre-release version
+  -p, --language string         the platform for which the version should be output.
+  -o, --omit-commit-hash        whether to include or omit the commit hash in the version
+  -r, --repo string             path to repository, defaults to current working directory
+      --tag-pattern string      regex pattern to filter tags with (e.g. ^sdk/)
+      --version-prefix string   the version prefix (e.g. 3.0.0). Must be valid semver.
+
+Global Flags:
+  -D, --debug          enable debug logging
+  -t, --token string   a github token to use for making API calls to GitHub.
+
+error calculating version: getting language versions: error resolving commitish to reference: reference not found
+make: *** No rule to make target 'all'.  Stop.
+
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Sun Jun 12 20:28:49 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+WSLENV = ELECTRON_RUN_AS_NODE/w:WT_SESSION::WT_PROFILE_ID
+# default
+.SHELLFLAGS := -c
+# environment
+VSCODE_LOG_NATIVE = false
+# environment
+NVM_INC = /home/prom3theu5/.nvm/versions/node/v14.19.3/include/node
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /home/prom3theu5/pulumi-nexus
+# makefile (from 'Makefile', line 3)
+SHELL := /bin/bash
+# environment
+FZF_DEFAULT_COMMAND = rg --hidden --no-ignore --files -g "!.git/"
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
+# environment
+_ = /mnt/c/Users/daves/AppData/Local/Programs/Microsoft VS Code/bin/code
+# makefile (from 'Makefile', line 9)
+PROVIDER_PATH := provider
+# environment
+STARSHIP_SESSION_KEY = 1235024482555224
+# makefile (from 'Makefile', line 16)
+TESTPARALLELISM := 4
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# makefile (from 'Makefile', line 14)
+VERSION := 
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# makefile (from 'Makefile', line 21)
+EMPTY_TO_AVOID_SED := ""
+# environment
+VSCODE_CWD = /mnt/c/Users/daves/AppData/Local/Programs/Microsoft VS Code
+# environment
+GOPROXY = https://proxy.golang.org,direct
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /home/prom3theu5/.vscode-server/bin/4af164ea3a06f701fe3e89a2bcbb421d2026b68f/bin/remote-cli:/home/prom3theu5/.nvm/versions/node/v14.19.3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/Microsoft SDKs/Azure/CLI2/wbin:/mnt/c/Python310/Scripts/:/mnt/c/Python310/:/mnt/c/Program Files/Microsoft/jdk-11.0.12.7-hotspot/bin:/mnt/c/Program Files/Oculus/Support/oculus-runtime:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/Microsoft SQL Server/130/Tools/Binn/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/Amazon/AWSCLIV2/:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Windows/SysWow64:/mnt/c/Program Files/LINQPad7:/mnt/c/Program Files/Microsoft/Azure Functions Core Tools/:/mnt/c/Program Files/nodejs/:/mnt/c/Program Files (x86)/Sennheiser/Sennheiser Updater/:/mnt/c/Program Files (x86)/Tailscale IPN:/mnt/c/Program Files/k6/:/mnt/c/ProgramData/chocolatey/lib/pulumi/tools/Pulumi/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/Git LFS:/mnt/c/Program Files/PowerShell/7/:/mnt/c/Program Files/Go/bin:/mnt/c/Program Files/GitHub CLI/:/mnt/c/Users/daves/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/daves/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/daves/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/daves/.dotnet/tools:/mnt/c/Users/daves/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/daves/AppData/Local/gitkraken/bin:/mnt/c/Users/daves/.dotnet/tools:/mnt/c/docker:/mnt/c/tools:/mnt/c/Tools/flutter/bin:/mnt/c/Tools/jdk-11.0.11+9/bin:/mnt/c/Users/daves/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/daves/AppData/Roaming/npm:/mnt/c/Users/daves/AppData/Local/Programs/oh-my-posh/bin:/mnt/c/Users/daves/AppData/Local/Programs/oh-my-posh/themes:/mnt/c/Users/daves/go/bin:/mnt/c/Users/daves/AppData/Local/JetBrains/Installations/Rider203/bin:/home/prom3theu5/.fzf/bin:/home/linuxbrew/.linuxbrew/bin:/home/prom3theu5/.pulumi/bin
+# environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# makefile (from 'Makefile', line 6)
+PROJECT := github.com/SimCubeLtd/pulumi-nexus
+# environment
+FZF_BASE = /home/prom3theu5/.fzf
+# makefile (from 'Makefile', line 12)
+TFGEN := pulumi-tfgen-nexus
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# environment
+GOPATH = /home/prom3theu5/go
+# environment
+NVM_BIN = /home/prom3theu5/.nvm/versions/node/v14.19.3/bin
+# environment
+VSCODE_LOG_STACK = false
+# environment
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-b7777be2-9ef8-48df-a23b-0945292190f3.sock
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# automatic
+%F = $(notdir $%)
+# environment
+FZF_CTRL_T_COMMAND = rg --hidden --no-ignore --files -g "!.git/"
+# makefile (from 'Makefile', line 18)
+WORKING_DIR := /home/prom3theu5/pulumi-nexus
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /home/prom3theu5/pulumi-nexus
+# makefile (from 'Makefile', line 10)
+VERSION_PATH := provider/pkg/version.Version
+# default
+.LOADED := 
+# environment
+WSL_INTEROP = /run/WSL/14_interop
+# environment
+WT_SESSION = 3555db94-4047-4768-92f0-c207699428ef
+# environment
+GOMODCACHE = /home/prom3theu5/go/pkg/mod
+# environment
+HOME = /home/prom3theu5
+# environment
+LOGNAME = prom3theu5
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+NVM_CD_FLAGS = -q
+# environment
+ZSH = /home/prom3theu5/.oh-my-zsh
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 1
+# default
+MAKE_VERSION := 4.2.1
+# environment
+USER = prom3theu5
+# makefile
+.DEFAULT_GOAL := prepare
+# environment
+NAME = Code
+# makefile (from 'Makefile', line 5)
+ORG := SimCubeLtd
+# environment
+LESS = -R
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/daves/.vscode/extensions/ms-vscode-remote.remote-wsl-0.66.3
+# environment
+BREW_HOME = /home/linuxbrew/.linuxbrew/bin
+# default
+MAKE_COMMAND := make
+# environment
+OLDPWD = /mnt/c/Users/daves/AppData/Local/Programs/Microsoft VS Code
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# makefile (from 'Makefile', line 20)
+OS := Linux
+# makefile
+MAKEFLAGS = pqrR
+# makefile (from 'Makefile', line 7)
+NODE_MODULE_NAME := @pulumi/nexus
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+NVM_DIR = /home/prom3theu5/.nvm
+# makefile (from 'Makefile', line 4)
+PACK := nexus
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# automatic
++F = $(notdir $+)
+# environment
+VSCODE_HANDLES_SIGPIPE = true
+# environment
+WT_PROFILE_ID = {51855cb2-8cce-5362-8f54-464b92b32386}
+# 'override' directive
+.SHELLSTATUS := 0
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# makefile (from 'Makefile', line 1)
+PROJECT_NAME := nexus Package
+# environment
+PAGER = less
+# environment
+LC_ALL = C
+# makefile (from 'Makefile', line 13)
+PROVIDER := pulumi-resource-nexus
+# makefile (from 'Makefile', line 8)
+TF_NAME := nexus
+# environment
+HOSTTYPE = x86_64
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# default
+.RECIPEPREFIX := 
+# environment
+FZF_DEFAULT_OPTS = --height 40% --layout=reverse --border
+# environment
+LANG = C
+# environment
+TERM = xterm-256color
+# environment
+VSCODE_EXTHOST_WILL_SEND_SOCKET = true
+# environment
+WSL_DISTRO_NAME = Ubuntu
+# environment
+STARSHIP_SHELL = zsh
+# variable set hash-table stats:
+# Load=100/1024=10%, Rehash=0, Collisions=8/156=5%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 2064, inode 168331): 16 files, no impossibilities.
+
+# 16 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+# makefile (from 'Makefile', line 60)
+build_nodejs: VERSION := 
+# 'override' directive
+build_nodejs: .SHELLSTATUS := 1
+build_nodejs:: install_plugins tfgen
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=2/32=6%, Rehash=0, Collisions=0/5=0%
+#  recipe to execute (from 'Makefile', line 62):
+	$(WORKING_DIR)/bin/$(TFGEN) nodejs --overlays provider/overlays/nodejs --out sdk/nodejs/
+	cd sdk/nodejs/ && \
+        yarn install && \
+        yarn run tsc && \
+		cp -R scripts/ bin && \
+        cp ../../README.md ../../LICENSE package.json yarn.lock ./bin/ && \
+		sed -i.bak -e "s/\$${VERSION}/$(VERSION)/g" ./bin/package.json
+
+cleanup::
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 96):
+	rm -r $(WORKING_DIR)/bin
+	rm -f provider/cmd/${PROVIDER}/schema.go
+
+# Not a target:
+all:
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+.PHONY: development provider build_sdks build_nodejs build_dotnet build_go build_python cleanup
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+install_nodejs_sdk::
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 120):
+	yarn link --cwd $(WORKING_DIR)/sdk/nodejs/bin
+
+build_go:: install_plugins tfgen
+#  Phony target (prerequisite of .PHONY).
+ 
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 90):
+	$(WORKING_DIR)/bin/$(TFGEN) go --overlays provider/overlays/go --out sdk/go/
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-12 20:27:01.143010823
+#  File has been updated.
+#  Successfully updated.
+
+test::
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 125):
+	cd examples && go test -v -tags=all -parallel ${TESTPARALLELISM} -timeout 2h
+
+tfgen:: install_plugins
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 51):
+	(cd provider && go build -o $(WORKING_DIR)/bin/${TFGEN} -ldflags "-X ${PROJECT}/${VERSION_PATH}=${VERSION}" ${PROJECT}/${PROVIDER_PATH}/cmd/${TFGEN})
+	$(WORKING_DIR)/bin/${TFGEN} schema --out provider/cmd/${PROVIDER}
+	(cd provider && VERSION=$(VERSION) go generate cmd/${PROVIDER}/main.go)
+
+# makefile (from 'Makefile', line 70)
+build_python: PYPI_VERSION := 
+# 'override' directive
+build_python: .SHELLSTATUS := 1
+build_python:: install_plugins tfgen
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=2/32=6%, Rehash=0, Collisions=0/5=0%
+#  recipe to execute (from 'Makefile', line 72):
+	$(WORKING_DIR)/bin/$(TFGEN) python --overlays provider/overlays/python --out sdk/python/
+	cd sdk/python/ && \
+        cp ../../README.md . && \
+        python3 setup.py clean --all 2>/dev/null && \
+        rm -rf ./bin/ ../python.bin/ && cp -R . ../python.bin && mv ../python.bin ./bin && \
+        sed -i.bak -e 's/^VERSION = .*/VERSION = "$(PYPI_VERSION)"/g' -e 's/^PLUGIN_VERSION = .*/PLUGIN_VERSION = "$(VERSION)"/g' ./bin/setup.py && \
+        rm ./bin/setup.py.bak && \
+        cd ./bin && python3 setup.py build sdist
+
+build:: install_plugins provider build_sdks install_sdks
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+prepare::
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 24):
+	@if test -z "${NAME}"; then echo "NAME not set"; exit 1; fi
+	@if test -z "${REPOSITORY}"; then echo "REPOSITORY not set"; exit 1; fi
+	@if test ! -d "provider/cmd/pulumi-tfgen-x${EMPTY_TO_AVOID_SED}yz"; then "Project already prepared"; exit 1; fi
+	mv "provider/cmd/pulumi-tfgen-x${EMPTY_TO_AVOID_SED}yz" provider/cmd/pulumi-tfgen-${NAME}
+	mv "provider/cmd/pulumi-resource-x${EMPTY_TO_AVOID_SED}yz" provider/cmd/pulumi-resource-${NAME}
+	if [[ "${OS}" != "Darwin" ]]; then \
+		sed -i 's,github.com/SimCubeLtd/pulumi-nexus,${REPOSITORY},g' provider/go.mod; \
+		find ./ ! -path './.git/*' -type f -exec sed -i 's/[x]yz/${NAME}/g' {} \; &> /dev/null; \
+	fi
+	# In MacOS the -i parameter needs an empty string to execute in place.
+	if [[ "${OS}" == "Darwin" ]]; then \
+		sed -i '' 's,github.com/SimCubeLtd/pulumi-nexus,${REPOSITORY},g' provider/go.mod; \
+		find ./ ! -path './.git/*' -type f -exec sed -i '' 's/[x]yz/${NAME}/g' {} \; &> /dev/null; \
+	fi
+
+install_sdks:: install_dotnet_sdk install_python_sdk install_nodejs_sdk
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+install_go_sdk::
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+install_plugins::
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 108):
+	[ -x $(shell which pulumi) ] || curl -fsSL https://get.pulumi.com | sh
+	pulumi plugin install resource random 4.3.1
+
+lint_provider:: provider
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 93):
+	cd provider && golangci-lint run -c ../.golangci.yml
+
+help::
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 100):
+	@grep '^[^.#]\+:\s\+.*#' Makefile | \
+ 	sed "s/\(.\+\):\s*\(.*\) #\s*\(.*\)/`printf "\033[93m"`\1`printf "\033[0m"`	\3 [\2]/" | \
+ 	expand -t20
+
+development:: install_plugins provider lint_provider build_sdks install_sdks cleanup
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+install_python_sdk::
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# makefile (from 'Makefile', line 81)
+build_dotnet: DOTNET_VERSION := 
+# 'override' directive
+build_dotnet: .SHELLSTATUS := 1
+build_dotnet:: install_plugins tfgen
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=2/32=6%, Rehash=0, Collisions=0/5=0%
+#  recipe to execute (from 'Makefile', line 83):
+	pulumictl get version --language dotnet
+	$(WORKING_DIR)/bin/$(TFGEN) dotnet --overlays provider/overlays/dotnet --out sdk/dotnet/
+	cd sdk/dotnet/ && \
+		echo "${DOTNET_VERSION}" >version.txt && \
+        dotnet build /p:Version=${DOTNET_VERSION}
+
+provider:: tfgen install_plugins
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 56):
+	(cd provider && go build -o $(WORKING_DIR)/bin/${PROVIDER} -ldflags "-X ${PROJECT}/${VERSION_PATH}=${VERSION}" ${PROJECT}/${PROVIDER_PATH}/cmd/${PROVIDER})
+
+clean::
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 105):
+	rm -rf sdk/{dotnet,nodejs,go,python}
+
+only_build:: build
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build_sdks:: install_plugins provider build_nodejs build_python build_go build_dotnet
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+install_dotnet_sdk::
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 112):
+	mkdir -p $(WORKING_DIR)/nuget
+	find . -name '*.nupkg' -print -exec cp -p {} ${WORKING_DIR}/nuget \;
+
+# files hash-table stats:
+# Load=27/1024=3%, Rehash=0, Collisions=5/113=4%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 43 / storage = 458 B / avg = 10 B
+# current buf: size = 8162 B / used = 458 B / count = 43 / avg = 10 B
+
+# strcache performance: lookups = 114 / hit rate = 62%
+# hash-table stats:
+# Load=43/8192=1%, Rehash=0, Collisions=1/114=1%
+# Finished Make data base on Sun Jun 12 20:28:49 2022
+
+ 

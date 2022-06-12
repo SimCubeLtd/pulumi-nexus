@@ -5,9 +5,64 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 // Export members:
-export * from "./getItem";
-export * from "./getVault";
-export * from "./item";
+export * from "./getNexusAnonymous";
+export * from "./getNexusBlobstore";
+export * from "./getNexusBlobstoreAzure";
+export * from "./getNexusBlobstoreFile";
+export * from "./getNexusBlobstoreGroup";
+export * from "./getNexusBlobstoreS3";
+export * from "./getNexusPrivileges";
+export * from "./getNexusRepository";
+export * from "./getNexusRepositoryAptHosted";
+export * from "./getNexusRepositoryAptProxy";
+export * from "./getNexusRepositoryDockerGroup";
+export * from "./getNexusRepositoryDockerHosted";
+export * from "./getNexusRepositoryDockerProxy";
+export * from "./getNexusRepositoryList";
+export * from "./getNexusRepositoryYumGroup";
+export * from "./getNexusRepositoryYumHosted";
+export * from "./getNexusRepositoryYumProxy";
+export * from "./getNexusRoutingRule";
+export * from "./getNexusSecurityAnonymous";
+export * from "./getNexusSecurityContentSelector";
+export * from "./getNexusSecurityLdap";
+export * from "./getNexusSecurityRealms";
+export * from "./getNexusSecurityRole";
+export * from "./getNexusSecuritySaml";
+export * from "./getNexusSecurityUser";
+export * from "./getNexusSecurityUserToken";
+export * from "./getNexusUser";
+export * from "./nexusAnonymous";
+export * from "./nexusBlobstore";
+export * from "./nexusBlobstoreAzure";
+export * from "./nexusBlobstoreFile";
+export * from "./nexusBlobstoreGroup";
+export * from "./nexusBlobstoreS3";
+export * from "./nexusContentSelector";
+export * from "./nexusPrivilege";
+export * from "./nexusRepository";
+export * from "./nexusRepositoryAptHosted";
+export * from "./nexusRepositoryAptProxy";
+export * from "./nexusRepositoryDockerGroup";
+export * from "./nexusRepositoryDockerHosted";
+export * from "./nexusRepositoryDockerProxy";
+export * from "./nexusRepositoryMavenHosted";
+export * from "./nexusRepositoryYumGroup";
+export * from "./nexusRepositoryYumHosted";
+export * from "./nexusRepositoryYumProxy";
+export * from "./nexusRole";
+export * from "./nexusRoutingRule";
+export * from "./nexusScript";
+export * from "./nexusSecurityAnonymous";
+export * from "./nexusSecurityContentSelector";
+export * from "./nexusSecurityLdap";
+export * from "./nexusSecurityLdapOrder";
+export * from "./nexusSecurityRealms";
+export * from "./nexusSecurityRole";
+export * from "./nexusSecuritySaml";
+export * from "./nexusSecurityUser";
+export * from "./nexusSecurityUserToken";
+export * from "./nexusUser";
 export * from "./provider";
 
 // Export sub-modules:
@@ -20,20 +75,140 @@ export {
 };
 
 // Import resources to register:
-import { Item } from "./item";
+import { NexusAnonymous } from "./nexusAnonymous";
+import { NexusBlobstore } from "./nexusBlobstore";
+import { NexusBlobstoreAzure } from "./nexusBlobstoreAzure";
+import { NexusBlobstoreFile } from "./nexusBlobstoreFile";
+import { NexusBlobstoreGroup } from "./nexusBlobstoreGroup";
+import { NexusBlobstoreS3 } from "./nexusBlobstoreS3";
+import { NexusContentSelector } from "./nexusContentSelector";
+import { NexusPrivilege } from "./nexusPrivilege";
+import { NexusRepository } from "./nexusRepository";
+import { NexusRepositoryAptHosted } from "./nexusRepositoryAptHosted";
+import { NexusRepositoryAptProxy } from "./nexusRepositoryAptProxy";
+import { NexusRepositoryDockerGroup } from "./nexusRepositoryDockerGroup";
+import { NexusRepositoryDockerHosted } from "./nexusRepositoryDockerHosted";
+import { NexusRepositoryDockerProxy } from "./nexusRepositoryDockerProxy";
+import { NexusRepositoryMavenHosted } from "./nexusRepositoryMavenHosted";
+import { NexusRepositoryYumGroup } from "./nexusRepositoryYumGroup";
+import { NexusRepositoryYumHosted } from "./nexusRepositoryYumHosted";
+import { NexusRepositoryYumProxy } from "./nexusRepositoryYumProxy";
+import { NexusRole } from "./nexusRole";
+import { NexusRoutingRule } from "./nexusRoutingRule";
+import { NexusScript } from "./nexusScript";
+import { NexusSecurityAnonymous } from "./nexusSecurityAnonymous";
+import { NexusSecurityContentSelector } from "./nexusSecurityContentSelector";
+import { NexusSecurityLdap } from "./nexusSecurityLdap";
+import { NexusSecurityLdapOrder } from "./nexusSecurityLdapOrder";
+import { NexusSecurityRealms } from "./nexusSecurityRealms";
+import { NexusSecurityRole } from "./nexusSecurityRole";
+import { NexusSecuritySaml } from "./nexusSecuritySaml";
+import { NexusSecurityUser } from "./nexusSecurityUser";
+import { NexusSecurityUserToken } from "./nexusSecurityUserToken";
+import { NexusUser } from "./nexusUser";
 
 const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
-            case "nexus:index/item:Item":
-                return new Item(name, <any>undefined, { urn })
+            case "nexus:index/nexusAnonymous:NexusAnonymous":
+                return new NexusAnonymous(name, <any>undefined, { urn })
+            case "nexus:index/nexusBlobstore:NexusBlobstore":
+                return new NexusBlobstore(name, <any>undefined, { urn })
+            case "nexus:index/nexusBlobstoreAzure:NexusBlobstoreAzure":
+                return new NexusBlobstoreAzure(name, <any>undefined, { urn })
+            case "nexus:index/nexusBlobstoreFile:NexusBlobstoreFile":
+                return new NexusBlobstoreFile(name, <any>undefined, { urn })
+            case "nexus:index/nexusBlobstoreGroup:NexusBlobstoreGroup":
+                return new NexusBlobstoreGroup(name, <any>undefined, { urn })
+            case "nexus:index/nexusBlobstoreS3:NexusBlobstoreS3":
+                return new NexusBlobstoreS3(name, <any>undefined, { urn })
+            case "nexus:index/nexusContentSelector:NexusContentSelector":
+                return new NexusContentSelector(name, <any>undefined, { urn })
+            case "nexus:index/nexusPrivilege:NexusPrivilege":
+                return new NexusPrivilege(name, <any>undefined, { urn })
+            case "nexus:index/nexusRepository:NexusRepository":
+                return new NexusRepository(name, <any>undefined, { urn })
+            case "nexus:index/nexusRepositoryAptHosted:NexusRepositoryAptHosted":
+                return new NexusRepositoryAptHosted(name, <any>undefined, { urn })
+            case "nexus:index/nexusRepositoryAptProxy:NexusRepositoryAptProxy":
+                return new NexusRepositoryAptProxy(name, <any>undefined, { urn })
+            case "nexus:index/nexusRepositoryDockerGroup:NexusRepositoryDockerGroup":
+                return new NexusRepositoryDockerGroup(name, <any>undefined, { urn })
+            case "nexus:index/nexusRepositoryDockerHosted:NexusRepositoryDockerHosted":
+                return new NexusRepositoryDockerHosted(name, <any>undefined, { urn })
+            case "nexus:index/nexusRepositoryDockerProxy:NexusRepositoryDockerProxy":
+                return new NexusRepositoryDockerProxy(name, <any>undefined, { urn })
+            case "nexus:index/nexusRepositoryMavenHosted:NexusRepositoryMavenHosted":
+                return new NexusRepositoryMavenHosted(name, <any>undefined, { urn })
+            case "nexus:index/nexusRepositoryYumGroup:NexusRepositoryYumGroup":
+                return new NexusRepositoryYumGroup(name, <any>undefined, { urn })
+            case "nexus:index/nexusRepositoryYumHosted:NexusRepositoryYumHosted":
+                return new NexusRepositoryYumHosted(name, <any>undefined, { urn })
+            case "nexus:index/nexusRepositoryYumProxy:NexusRepositoryYumProxy":
+                return new NexusRepositoryYumProxy(name, <any>undefined, { urn })
+            case "nexus:index/nexusRole:NexusRole":
+                return new NexusRole(name, <any>undefined, { urn })
+            case "nexus:index/nexusRoutingRule:NexusRoutingRule":
+                return new NexusRoutingRule(name, <any>undefined, { urn })
+            case "nexus:index/nexusScript:NexusScript":
+                return new NexusScript(name, <any>undefined, { urn })
+            case "nexus:index/nexusSecurityAnonymous:NexusSecurityAnonymous":
+                return new NexusSecurityAnonymous(name, <any>undefined, { urn })
+            case "nexus:index/nexusSecurityContentSelector:NexusSecurityContentSelector":
+                return new NexusSecurityContentSelector(name, <any>undefined, { urn })
+            case "nexus:index/nexusSecurityLdap:NexusSecurityLdap":
+                return new NexusSecurityLdap(name, <any>undefined, { urn })
+            case "nexus:index/nexusSecurityLdapOrder:NexusSecurityLdapOrder":
+                return new NexusSecurityLdapOrder(name, <any>undefined, { urn })
+            case "nexus:index/nexusSecurityRealms:NexusSecurityRealms":
+                return new NexusSecurityRealms(name, <any>undefined, { urn })
+            case "nexus:index/nexusSecurityRole:NexusSecurityRole":
+                return new NexusSecurityRole(name, <any>undefined, { urn })
+            case "nexus:index/nexusSecuritySaml:NexusSecuritySaml":
+                return new NexusSecuritySaml(name, <any>undefined, { urn })
+            case "nexus:index/nexusSecurityUser:NexusSecurityUser":
+                return new NexusSecurityUser(name, <any>undefined, { urn })
+            case "nexus:index/nexusSecurityUserToken:NexusSecurityUserToken":
+                return new NexusSecurityUserToken(name, <any>undefined, { urn })
+            case "nexus:index/nexusUser:NexusUser":
+                return new NexusUser(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
-pulumi.runtime.registerResourceModule("nexus", "index/item", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusAnonymous", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusBlobstore", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusBlobstoreAzure", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusBlobstoreFile", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusBlobstoreGroup", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusBlobstoreS3", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusContentSelector", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusPrivilege", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusRepository", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusRepositoryAptHosted", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusRepositoryAptProxy", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusRepositoryDockerGroup", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusRepositoryDockerHosted", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusRepositoryDockerProxy", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusRepositoryMavenHosted", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusRepositoryYumGroup", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusRepositoryYumHosted", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusRepositoryYumProxy", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusRole", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusRoutingRule", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusScript", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusSecurityAnonymous", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusSecurityContentSelector", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusSecurityLdap", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusSecurityLdapOrder", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusSecurityRealms", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusSecurityRole", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusSecuritySaml", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusSecurityUser", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusSecurityUserToken", _module)
+pulumi.runtime.registerResourceModule("nexus", "index/nexusUser", _module)
 
 import { Provider } from "./provider";
 

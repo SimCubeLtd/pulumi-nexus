@@ -1,7 +1,7 @@
 {
     "name": "@simcubeltd/pulumi-nexus",
     "version": "${VERSION}",
-    "description": "A Pulumi package for creating and managing nexus resources.",
+    "description": "A Pulumi package for creating and managing SonaType Nexus resources.",
     "keywords": [
         "pulumi",
         "nexus",

@@ -8,24 +8,46 @@ declare var exports: any;
 const __config = new pulumi.Config("nexus");
 
 /**
- * A valid token for your 1Password Connect API. Can also be sourced from OP_CONNECT_TOKEN.
+ * Boolean to specify wether insecure SSL connections are allowed or not. Reading environment variable
+ * NEXUS_INSECURE_SKIP_VERIFY. Default:`true`
  */
-export declare const token: string | undefined;
-Object.defineProperty(exports, "token", {
+export declare const insecure: boolean | undefined;
+Object.defineProperty(exports, "insecure", {
     get() {
-        return __config.get("token");
+        return __config.getObject<boolean>("insecure");
     },
     enumerable: true,
 });
 
 /**
- * The HTTP(S) URL where your 1Password Connect API can be found. Must be provided through the the OP_CONNECT_HOST
- * environment variable if this attribute is not set.
+ * Password of user to connect to API. Reading environment variable NEXUS_PASSWORD. Default:`admin123`
+ */
+export declare const password: string | undefined;
+Object.defineProperty(exports, "password", {
+    get() {
+        return __config.get("password");
+    },
+    enumerable: true,
+});
+
+/**
+ * URL of Nexus to reach API. Reading environment variable NEXUS_URL. Default:`http://127.0.0.1:8080`
  */
 export declare const url: string | undefined;
 Object.defineProperty(exports, "url", {
     get() {
         return __config.get("url");
+    },
+    enumerable: true,
+});
+
+/**
+ * Username used to connect to API. Reading environment variable NEXUS_USERNAME. Default:`admin`
+ */
+export declare const username: string | undefined;
+Object.defineProperty(exports, "username", {
+    get() {
+        return __config.get("username");
     },
     enumerable: true,
 });

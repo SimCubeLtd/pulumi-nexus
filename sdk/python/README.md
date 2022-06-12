@@ -1,11 +1,11 @@
-# 1Password Provider
-[1Password Website](1password.com)
+# Sonatype Nexus Provider
+[Sonatype Nexus Website](https://www.sonatype.com/products/nexus-repository)
 
-Based on the [1Password terraform provider](https://github.com/1Password/terraform-provider-nexus)
+Based on the [nexus terraform provider](https://github.com/datadrivers/terraform-provider-nexus) by datadrivers.
 
 &nbsp;
 
-The 1Password resource provider for Pulumi lets you use 1Password resources in your Infrastructure as Code deployments.
+The Nexus resource provider for Pulumi lets you use and manage Sonatype Nexus resources in your Infrastructure as Code deployments.
 
 
 ## Installing
@@ -17,19 +17,19 @@ This package is available in C#, TypeScript, Python and Go
 To use from .NET, install using `dotnet add package`:
 
 ```bash
-dotnet add package Pulumi.nexus
+dotnet add package Pulumi.Nexus
 ```
 
 ### Node.js (Java/TypeScript)
 
 ```bash
-npm install @SimCubeLtd/pulumi-nexus
+npm install @simcubeltd/pulumi-nexus
 ```
 
 or `yarn`:
 
 ```bash
-yarn add @SimCubeLtd/pulumi-nexus
+yarn add @simcubeltd/pulumi-nexus
 ```
 
 ### Python
@@ -52,7 +52,9 @@ go get github.com/SimCubeLtd/pulumi-nexus/sdk/go/nexus
 
 The following configuration entries are available:
 
-| **Key**           | **Value**                                            |
-|-------------------|:-----------------------------------------------------|
-| nexus:token | The access token for your 1Password Connect server   |
-| nexus:url   | URL where your 1Password Connect API is being served |
+| **Key**           | **Value**                                                  |
+|-------------------|:-----------------------------------------------------------|
+| nexus:insecure    | Boolean, true if http, false if https.                     |
+| nexus:url         | Url to the nexus instance, including relevant port.        |
+| nexus:username    | Account Username for Nexus (account must have admin role). |
+| nexus:password    | Account password for Nexus (account must have admin role). |

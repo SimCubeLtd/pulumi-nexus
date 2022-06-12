@@ -26,14 +26,17 @@ export class Provider extends pulumi.ProviderResource {
     }
 
     /**
-     * A valid token for your 1Password Connect API. Can also be sourced from OP_CONNECT_TOKEN.
+     * Password of user to connect to API. Reading environment variable NEXUS_PASSWORD. Default:`admin123`
      */
-    public readonly token!: pulumi.Output<string>;
+    public readonly password!: pulumi.Output<string>;
     /**
-     * The HTTP(S) URL where your 1Password Connect API can be found. Must be provided through the the OP_CONNECT_HOST
-     * environment variable if this attribute is not set.
+     * URL of Nexus to reach API. Reading environment variable NEXUS_URL. Default:`http://127.0.0.1:8080`
      */
-    public readonly url!: pulumi.Output<string | undefined>;
+    public readonly url!: pulumi.Output<string>;
+    /**
+     * Username used to connect to API. Reading environment variable NEXUS_USERNAME. Default:`admin`
+     */
+    public readonly username!: pulumi.Output<string>;
 
     /**
      * Create a Provider resource with the given unique name, arguments, and options.
@@ -46,11 +49,19 @@ export class Provider extends pulumi.ProviderResource {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         {
-            if ((!args || args.token === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'token'");
+            if ((!args || args.password === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'password'");
             }
-            resourceInputs["token"] = args ? args.token : undefined;
+            if ((!args || args.url === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'url'");
+            }
+            if ((!args || args.username === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'username'");
+            }
+            resourceInputs["insecure"] = pulumi.output(args ? args.insecure : undefined).apply(JSON.stringify);
+            resourceInputs["password"] = args ? args.password : undefined;
             resourceInputs["url"] = args ? args.url : undefined;
+            resourceInputs["username"] = args ? args.username : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Provider.__pulumiType, name, resourceInputs, opts);
@@ -62,12 +73,20 @@ export class Provider extends pulumi.ProviderResource {
  */
 export interface ProviderArgs {
     /**
-     * A valid token for your 1Password Connect API. Can also be sourced from OP_CONNECT_TOKEN.
+     * Boolean to specify wether insecure SSL connections are allowed or not. Reading environment variable
+     * NEXUS_INSECURE_SKIP_VERIFY. Default:`true`
      */
-    token: pulumi.Input<string>;
+    insecure?: pulumi.Input<boolean>;
     /**
-     * The HTTP(S) URL where your 1Password Connect API can be found. Must be provided through the the OP_CONNECT_HOST
-     * environment variable if this attribute is not set.
+     * Password of user to connect to API. Reading environment variable NEXUS_PASSWORD. Default:`admin123`
      */
-    url?: pulumi.Input<string>;
+    password: pulumi.Input<string>;
+    /**
+     * URL of Nexus to reach API. Reading environment variable NEXUS_URL. Default:`http://127.0.0.1:8080`
+     */
+    url: pulumi.Input<string>;
+    /**
+     * Username used to connect to API. Reading environment variable NEXUS_USERNAME. Default:`admin`
+     */
+    username: pulumi.Input<string>;
 }

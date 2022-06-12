@@ -4,70 +4,651 @@
 import * as pulumi from "@pulumi/pulumi";
 import { input as inputs, output as outputs } from "../types";
 
-export interface ItemPasswordRecipe {
-    /**
-     * Use digits [0-9] when generating the password.
-     */
-    digits?: pulumi.Input<boolean>;
-    /**
-     * The length of the password to be generated.
-     */
-    length?: pulumi.Input<number>;
-    /**
-     * Use letters [a-zA-Z] when generating the password.
-     */
-    letters?: pulumi.Input<boolean>;
-    /**
-     * Use symbols [!@.-_*] when generating the password.
-     */
-    symbols?: pulumi.Input<boolean>;
+export interface GetNexusBlobstoreBucketConfiguration {
+    advancedBucketConnection?: inputs.GetNexusBlobstoreBucketConfigurationAdvancedBucketConnection;
+    bucket: inputs.GetNexusBlobstoreBucketConfigurationBucket;
+    bucketSecurity: inputs.GetNexusBlobstoreBucketConfigurationBucketSecurity;
+    encryption?: inputs.GetNexusBlobstoreBucketConfigurationEncryption;
 }
 
-export interface ItemSection {
-    /**
-     * A list of custom fields in the section.
-     */
-    fields?: pulumi.Input<pulumi.Input<inputs.ItemSectionField>[]>;
-    /**
-     * A unique identifier for the section.
-     */
-    id?: pulumi.Input<string>;
-    /**
-     * The label for the section.
-     */
-    label: pulumi.Input<string>;
+export interface GetNexusBlobstoreBucketConfigurationArgs {
+    advancedBucketConnection?: pulumi.Input<inputs.GetNexusBlobstoreBucketConfigurationAdvancedBucketConnectionArgs>;
+    bucket: pulumi.Input<inputs.GetNexusBlobstoreBucketConfigurationBucketArgs>;
+    bucketSecurity: pulumi.Input<inputs.GetNexusBlobstoreBucketConfigurationBucketSecurityArgs>;
+    encryption?: pulumi.Input<inputs.GetNexusBlobstoreBucketConfigurationEncryptionArgs>;
 }
 
-export interface ItemSectionField {
-    id?: pulumi.Input<string>;
-    label: pulumi.Input<string>;
-    /**
-     * Password for this item.
-     */
-    passwordRecipe?: pulumi.Input<inputs.ItemSectionFieldPasswordRecipe>;
-    purpose?: pulumi.Input<string>;
-    /**
-     * (Only applies to the database category) The type of database. One of ["db2" "filemaker" "msaccess" "mssql" "mysql" "oracle" "postgresql" "sqlite" "other"]
-     */
+export interface GetNexusBlobstoreBucketConfigurationAdvancedBucketConnection {
+    endpoint?: string;
+    forcePathStyle?: boolean;
+    signerType?: string;
+}
+
+export interface GetNexusBlobstoreBucketConfigurationAdvancedBucketConnectionArgs {
+    endpoint?: pulumi.Input<string>;
+    forcePathStyle?: pulumi.Input<boolean>;
+    signerType?: pulumi.Input<string>;
+}
+
+export interface GetNexusBlobstoreBucketConfigurationBucket {
+    expiration?: number;
+    name: string;
+    prefix?: string;
+    region: string;
+}
+
+export interface GetNexusBlobstoreBucketConfigurationBucketArgs {
+    expiration?: pulumi.Input<number>;
+    name: pulumi.Input<string>;
+    prefix?: pulumi.Input<string>;
+    region: pulumi.Input<string>;
+}
+
+export interface GetNexusBlobstoreBucketConfigurationBucketSecurity {
+    accessKeyId: string;
+    role?: string;
+    secretAccessKey: string;
+    sessionToken?: string;
+}
+
+export interface GetNexusBlobstoreBucketConfigurationBucketSecurityArgs {
+    accessKeyId: pulumi.Input<string>;
+    role?: pulumi.Input<string>;
+    secretAccessKey: pulumi.Input<string>;
+    sessionToken?: pulumi.Input<string>;
+}
+
+export interface GetNexusBlobstoreBucketConfigurationEncryption {
+    encryptionKey?: string;
+    encryptionType?: string;
+}
+
+export interface GetNexusBlobstoreBucketConfigurationEncryptionArgs {
+    encryptionKey?: pulumi.Input<string>;
+    encryptionType?: pulumi.Input<string>;
+}
+
+export interface GetNexusBlobstoreSoftQuota {
+    limit?: number;
+    type?: string;
+}
+
+export interface GetNexusBlobstoreSoftQuotaArgs {
+    limit?: pulumi.Input<number>;
     type?: pulumi.Input<string>;
-    value?: pulumi.Input<string>;
 }
 
-export interface ItemSectionFieldPasswordRecipe {
-    /**
-     * Use digits [0-9] when generating the password.
-     */
-    digits?: pulumi.Input<boolean>;
-    /**
-     * The length of the password to be generated.
-     */
-    length?: pulumi.Input<number>;
-    /**
-     * Use letters [a-zA-Z] when generating the password.
-     */
-    letters?: pulumi.Input<boolean>;
-    /**
-     * Use symbols [!@.-_*] when generating the password.
-     */
-    symbols?: pulumi.Input<boolean>;
+export interface GetNexusRepositoryApt {
+    distribution: string;
 }
+
+export interface GetNexusRepositoryAptArgs {
+    distribution: pulumi.Input<string>;
+}
+
+export interface GetNexusRepositoryAptSigningArgs {
+    keypair: pulumi.Input<string>;
+    passphrase: pulumi.Input<string>;
+}
+
+export interface GetNexusRepositoryAptSigning {
+    keypair: string;
+    passphrase: string;
+}
+
+export interface GetNexusRepositoryCleanup {
+    policyNames: string[];
+}
+
+export interface GetNexusRepositoryCleanupArgs {
+    policyNames: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface GetNexusRepositoryDocker {
+    forceBasicAuth?: boolean;
+    httpPort?: number;
+    httpsPort?: number;
+    v1enabled?: boolean;
+}
+
+export interface GetNexusRepositoryDockerArgs {
+    forceBasicAuth?: pulumi.Input<boolean>;
+    httpPort?: pulumi.Input<number>;
+    httpsPort?: pulumi.Input<number>;
+    v1enabled?: pulumi.Input<boolean>;
+}
+
+export interface GetNexusRepositoryGroupArgs {
+    memberNames: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface GetNexusRepositoryGroup {
+    memberNames: string[];
+}
+
+export interface GetNexusRepositoryHttpClientArgs {
+    authentication?: pulumi.Input<inputs.GetNexusRepositoryHttpClientAuthenticationArgs>;
+    autoBlock?: pulumi.Input<boolean>;
+    blocked?: pulumi.Input<boolean>;
+    connections?: pulumi.Input<pulumi.Input<inputs.GetNexusRepositoryHttpClientConnectionArgs>[]>;
+}
+
+export interface GetNexusRepositoryHttpClient {
+    authentication?: inputs.GetNexusRepositoryHttpClientAuthentication;
+    autoBlock?: boolean;
+    blocked?: boolean;
+    connections?: inputs.GetNexusRepositoryHttpClientConnection[];
+}
+
+export interface GetNexusRepositoryHttpClientAuthenticationArgs {
+    ntlmDomain?: pulumi.Input<string>;
+    ntlmHost?: pulumi.Input<string>;
+    type: pulumi.Input<string>;
+    username?: pulumi.Input<string>;
+}
+
+export interface GetNexusRepositoryHttpClientAuthentication {
+    ntlmDomain?: string;
+    ntlmHost?: string;
+    type: string;
+    username?: string;
+}
+
+export interface GetNexusRepositoryHttpClientConnection {
+    retries?: number;
+    timeout?: number;
+}
+
+export interface GetNexusRepositoryHttpClientConnectionArgs {
+    retries?: pulumi.Input<number>;
+    timeout?: pulumi.Input<number>;
+}
+
+export interface GetNexusRepositoryMavenArgs {
+    layoutPolicy?: pulumi.Input<string>;
+    versionPolicy?: pulumi.Input<string>;
+}
+
+export interface GetNexusRepositoryMaven {
+    layoutPolicy?: string;
+    versionPolicy?: string;
+}
+
+export interface GetNexusRepositoryNegativeCache {
+    enabled?: boolean;
+    ttl?: number;
+}
+
+export interface GetNexusRepositoryNegativeCacheArgs {
+    enabled?: pulumi.Input<boolean>;
+    ttl?: pulumi.Input<number>;
+}
+
+export interface GetNexusRepositoryProxy {
+    contentMaxAge?: number;
+    metadataMaxAge?: number;
+    remoteUrl: string;
+}
+
+export interface GetNexusRepositoryProxyArgs {
+    contentMaxAge?: pulumi.Input<number>;
+    metadataMaxAge?: pulumi.Input<number>;
+    remoteUrl: pulumi.Input<string>;
+}
+
+export interface GetNexusRepositoryStorage {
+    blobStoreName?: string;
+    strictContentTypeValidation?: boolean;
+    writePolicy?: string;
+}
+
+export interface GetNexusRepositoryStorageArgs {
+    blobStoreName?: pulumi.Input<string>;
+    strictContentTypeValidation?: pulumi.Input<boolean>;
+    writePolicy?: pulumi.Input<string>;
+}
+
+export interface NexusBlobstoreAzureBucketConfiguration {
+    accountName: pulumi.Input<string>;
+    authentication: pulumi.Input<inputs.NexusBlobstoreAzureBucketConfigurationAuthentication>;
+    containerName: pulumi.Input<string>;
+}
+
+export interface NexusBlobstoreAzureBucketConfigurationAuthentication {
+    accountKey?: pulumi.Input<string>;
+    authenticationMethod: pulumi.Input<string>;
+}
+
+export interface NexusBlobstoreAzureSoftQuota {
+    limit: pulumi.Input<number>;
+    type: pulumi.Input<string>;
+}
+
+export interface NexusBlobstoreBucketConfiguration {
+    advancedBucketConnection?: pulumi.Input<inputs.NexusBlobstoreBucketConfigurationAdvancedBucketConnection>;
+    bucket: pulumi.Input<inputs.NexusBlobstoreBucketConfigurationBucket>;
+    bucketSecurity?: pulumi.Input<inputs.NexusBlobstoreBucketConfigurationBucketSecurity>;
+    encryption?: pulumi.Input<inputs.NexusBlobstoreBucketConfigurationEncryption>;
+}
+
+export interface NexusBlobstoreBucketConfigurationAdvancedBucketConnection {
+    endpoint?: pulumi.Input<string>;
+    forcePathStyle?: pulumi.Input<boolean>;
+    signerType?: pulumi.Input<string>;
+}
+
+export interface NexusBlobstoreBucketConfigurationBucket {
+    expiration?: pulumi.Input<number>;
+    name: pulumi.Input<string>;
+    prefix?: pulumi.Input<string>;
+    region: pulumi.Input<string>;
+}
+
+export interface NexusBlobstoreBucketConfigurationBucketSecurity {
+    accessKeyId: pulumi.Input<string>;
+    role?: pulumi.Input<string>;
+    secretAccessKey: pulumi.Input<string>;
+    sessionToken?: pulumi.Input<string>;
+}
+
+export interface NexusBlobstoreBucketConfigurationEncryption {
+    encryptionKey?: pulumi.Input<string>;
+    encryptionType?: pulumi.Input<string>;
+}
+
+export interface NexusBlobstoreFileSoftQuota {
+    limit: pulumi.Input<number>;
+    type: pulumi.Input<string>;
+}
+
+export interface NexusBlobstoreGroupSoftQuota {
+    limit: pulumi.Input<number>;
+    type: pulumi.Input<string>;
+}
+
+export interface NexusBlobstoreS3BucketConfiguration {
+    advancedBucketConnection?: pulumi.Input<inputs.NexusBlobstoreS3BucketConfigurationAdvancedBucketConnection>;
+    bucket: pulumi.Input<inputs.NexusBlobstoreS3BucketConfigurationBucket>;
+    bucketSecurity?: pulumi.Input<inputs.NexusBlobstoreS3BucketConfigurationBucketSecurity>;
+    encryption?: pulumi.Input<inputs.NexusBlobstoreS3BucketConfigurationEncryption>;
+}
+
+export interface NexusBlobstoreS3BucketConfigurationAdvancedBucketConnection {
+    endpoint?: pulumi.Input<string>;
+    forcePathStyle?: pulumi.Input<boolean>;
+    maxConnectionPoolSize?: pulumi.Input<number>;
+    signerType?: pulumi.Input<string>;
+}
+
+export interface NexusBlobstoreS3BucketConfigurationBucket {
+    expiration: pulumi.Input<number>;
+    name: pulumi.Input<string>;
+    prefix?: pulumi.Input<string>;
+    region: pulumi.Input<string>;
+}
+
+export interface NexusBlobstoreS3BucketConfigurationBucketSecurity {
+    accessKeyId?: pulumi.Input<string>;
+    role?: pulumi.Input<string>;
+    secretAccessKey?: pulumi.Input<string>;
+    sessionToken?: pulumi.Input<string>;
+}
+
+export interface NexusBlobstoreS3BucketConfigurationEncryption {
+    encryptionKey?: pulumi.Input<string>;
+    encryptionType?: pulumi.Input<string>;
+}
+
+export interface NexusBlobstoreS3SoftQuota {
+    limit: pulumi.Input<number>;
+    type: pulumi.Input<string>;
+}
+
+export interface NexusBlobstoreSoftQuota {
+    limit: pulumi.Input<number>;
+    type: pulumi.Input<string>;
+}
+
+export interface NexusRepositoryApt {
+    distribution: pulumi.Input<string>;
+    flat?: pulumi.Input<boolean>;
+}
+
+export interface NexusRepositoryAptHostedCleanup {
+    policyNames?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface NexusRepositoryAptHostedComponent {
+    proprietaryComponents: pulumi.Input<boolean>;
+}
+
+export interface NexusRepositoryAptHostedSigning {
+    keypair: pulumi.Input<string>;
+    passphrase?: pulumi.Input<string>;
+}
+
+export interface NexusRepositoryAptHostedStorage {
+    blobStoreName: pulumi.Input<string>;
+    strictContentTypeValidation: pulumi.Input<boolean>;
+    writePolicy?: pulumi.Input<string>;
+}
+
+export interface NexusRepositoryAptProxyCleanup {
+    policyNames?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface NexusRepositoryAptProxyHttpClient {
+    authentication?: pulumi.Input<inputs.NexusRepositoryAptProxyHttpClientAuthentication>;
+    autoBlock?: pulumi.Input<boolean>;
+    blocked?: pulumi.Input<boolean>;
+    connection?: pulumi.Input<inputs.NexusRepositoryAptProxyHttpClientConnection>;
+}
+
+export interface NexusRepositoryAptProxyHttpClientAuthentication {
+    ntlmDomain?: pulumi.Input<string>;
+    ntlmHost?: pulumi.Input<string>;
+    password?: pulumi.Input<string>;
+    type: pulumi.Input<string>;
+    username?: pulumi.Input<string>;
+}
+
+export interface NexusRepositoryAptProxyHttpClientConnection {
+    enableCircularRedirects?: pulumi.Input<boolean>;
+    enableCookies?: pulumi.Input<boolean>;
+    retries?: pulumi.Input<number>;
+    timeout?: pulumi.Input<number>;
+    useTrustStore?: pulumi.Input<boolean>;
+    userAgentSuffix?: pulumi.Input<string>;
+}
+
+export interface NexusRepositoryAptProxyNegativeCache {
+    enabled?: pulumi.Input<boolean>;
+    ttl?: pulumi.Input<number>;
+}
+
+export interface NexusRepositoryAptProxyProxy {
+    contentMaxAge?: pulumi.Input<number>;
+    metadataMaxAge?: pulumi.Input<number>;
+    remoteUrl: pulumi.Input<string>;
+}
+
+export interface NexusRepositoryAptProxyStorage {
+    blobStoreName: pulumi.Input<string>;
+    strictContentTypeValidation?: pulumi.Input<boolean>;
+}
+
+export interface NexusRepositoryAptSigning {
+    keypair: pulumi.Input<string>;
+    passphrase: pulumi.Input<string>;
+}
+
+export interface NexusRepositoryBower {
+    rewritePackageUrls?: pulumi.Input<boolean>;
+}
+
+export interface NexusRepositoryCleanup {
+    policyNames?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface NexusRepositoryDocker {
+    forceBasicAuth?: pulumi.Input<boolean>;
+    httpPort?: pulumi.Input<number>;
+    httpsPort?: pulumi.Input<number>;
+    v1enabled?: pulumi.Input<boolean>;
+}
+
+export interface NexusRepositoryDockerGroupDocker {
+    forceBasicAuth: pulumi.Input<boolean>;
+    httpPort?: pulumi.Input<number>;
+    httpsPort?: pulumi.Input<number>;
+    v1Enabled: pulumi.Input<boolean>;
+}
+
+export interface NexusRepositoryDockerGroupGroup {
+    memberNames: pulumi.Input<pulumi.Input<string>[]>;
+    writableMember?: pulumi.Input<string>;
+}
+
+export interface NexusRepositoryDockerGroupStorage {
+    blobStoreName: pulumi.Input<string>;
+    strictContentTypeValidation?: pulumi.Input<boolean>;
+}
+
+export interface NexusRepositoryDockerHostedCleanup {
+    policyNames?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface NexusRepositoryDockerHostedComponent {
+    proprietaryComponents: pulumi.Input<boolean>;
+}
+
+export interface NexusRepositoryDockerHostedDocker {
+    forceBasicAuth: pulumi.Input<boolean>;
+    httpPort?: pulumi.Input<number>;
+    httpsPort?: pulumi.Input<number>;
+    v1Enabled: pulumi.Input<boolean>;
+}
+
+export interface NexusRepositoryDockerHostedStorage {
+    blobStoreName: pulumi.Input<string>;
+    strictContentTypeValidation: pulumi.Input<boolean>;
+    writePolicy?: pulumi.Input<string>;
+}
+
+export interface NexusRepositoryDockerProxy {
+    indexType: pulumi.Input<string>;
+    indexUrl?: pulumi.Input<string>;
+}
+
+export interface NexusRepositoryDockerProxyCleanup {
+    policyNames?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface NexusRepositoryDockerProxyDocker {
+    forceBasicAuth: pulumi.Input<boolean>;
+    httpPort?: pulumi.Input<number>;
+    httpsPort?: pulumi.Input<number>;
+    v1Enabled: pulumi.Input<boolean>;
+}
+
+export interface NexusRepositoryDockerProxyDockerProxy {
+    indexType: pulumi.Input<string>;
+    indexUrl?: pulumi.Input<string>;
+}
+
+export interface NexusRepositoryDockerProxyHttpClient {
+    authentication?: pulumi.Input<inputs.NexusRepositoryDockerProxyHttpClientAuthentication>;
+    autoBlock?: pulumi.Input<boolean>;
+    blocked?: pulumi.Input<boolean>;
+    connection?: pulumi.Input<inputs.NexusRepositoryDockerProxyHttpClientConnection>;
+}
+
+export interface NexusRepositoryDockerProxyHttpClientAuthentication {
+    ntlmDomain?: pulumi.Input<string>;
+    ntlmHost?: pulumi.Input<string>;
+    password?: pulumi.Input<string>;
+    type: pulumi.Input<string>;
+    username?: pulumi.Input<string>;
+}
+
+export interface NexusRepositoryDockerProxyHttpClientConnection {
+    enableCircularRedirects?: pulumi.Input<boolean>;
+    enableCookies?: pulumi.Input<boolean>;
+    retries?: pulumi.Input<number>;
+    timeout?: pulumi.Input<number>;
+    useTrustStore?: pulumi.Input<boolean>;
+    userAgentSuffix?: pulumi.Input<string>;
+}
+
+export interface NexusRepositoryDockerProxyNegativeCache {
+    enabled?: pulumi.Input<boolean>;
+    ttl?: pulumi.Input<number>;
+}
+
+export interface NexusRepositoryDockerProxyProxy {
+    contentMaxAge?: pulumi.Input<number>;
+    metadataMaxAge?: pulumi.Input<number>;
+    remoteUrl: pulumi.Input<string>;
+}
+
+export interface NexusRepositoryDockerProxyStorage {
+    blobStoreName: pulumi.Input<string>;
+    strictContentTypeValidation?: pulumi.Input<boolean>;
+}
+
+export interface NexusRepositoryGroup {
+    memberNames: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface NexusRepositoryHttpClient {
+    authentication?: pulumi.Input<inputs.NexusRepositoryHttpClientAuthentication>;
+    autoBlock?: pulumi.Input<boolean>;
+    blocked?: pulumi.Input<boolean>;
+    connection?: pulumi.Input<inputs.NexusRepositoryHttpClientConnection>;
+}
+
+export interface NexusRepositoryHttpClientAuthentication {
+    ntlmDomain?: pulumi.Input<string>;
+    ntlmHost?: pulumi.Input<string>;
+    password?: pulumi.Input<string>;
+    type?: pulumi.Input<string>;
+    username?: pulumi.Input<string>;
+}
+
+export interface NexusRepositoryHttpClientConnection {
+    enableCookies?: pulumi.Input<boolean>;
+    retries?: pulumi.Input<number>;
+    timeout?: pulumi.Input<number>;
+    useTrustStore?: pulumi.Input<boolean>;
+    userAgentSuffix?: pulumi.Input<string>;
+}
+
+export interface NexusRepositoryMaven {
+    layoutPolicy?: pulumi.Input<string>;
+    versionPolicy?: pulumi.Input<string>;
+}
+
+export interface NexusRepositoryMavenHostedCleanup {
+    policyNames?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface NexusRepositoryMavenHostedComponent {
+    proprietaryComponents: pulumi.Input<boolean>;
+}
+
+export interface NexusRepositoryMavenHostedMaven {
+    contentDisposition?: pulumi.Input<string>;
+    layoutPolicy?: pulumi.Input<string>;
+    versionPolicy?: pulumi.Input<string>;
+}
+
+export interface NexusRepositoryMavenHostedStorage {
+    blobStoreName: pulumi.Input<string>;
+    strictContentTypeValidation: pulumi.Input<boolean>;
+    writePolicy?: pulumi.Input<string>;
+}
+
+export interface NexusRepositoryNegativeCache {
+    enabled?: pulumi.Input<boolean>;
+    ttl?: pulumi.Input<number>;
+}
+
+export interface NexusRepositoryNugetProxy {
+    nugetVersion?: pulumi.Input<string>;
+    queryCacheItemMaxAge: pulumi.Input<number>;
+}
+
+export interface NexusRepositoryProxy {
+    contentMaxAge?: pulumi.Input<number>;
+    metadataMaxAge?: pulumi.Input<number>;
+    remoteUrl?: pulumi.Input<string>;
+}
+
+export interface NexusRepositoryStorage {
+    blobStoreName?: pulumi.Input<string>;
+    strictContentTypeValidation?: pulumi.Input<boolean>;
+    writePolicy?: pulumi.Input<string>;
+}
+
+export interface NexusRepositoryYum {
+    deployPolicy: pulumi.Input<string>;
+    repodataDepth?: pulumi.Input<number>;
+}
+
+export interface NexusRepositoryYumGroupGroup {
+    memberNames: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface NexusRepositoryYumGroupStorage {
+    blobStoreName: pulumi.Input<string>;
+    strictContentTypeValidation?: pulumi.Input<boolean>;
+}
+
+export interface NexusRepositoryYumGroupYumSigning {
+    keypair: pulumi.Input<string>;
+    passphrase?: pulumi.Input<string>;
+}
+
+export interface NexusRepositoryYumHostedCleanup {
+    policyNames?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface NexusRepositoryYumHostedComponent {
+    proprietaryComponents: pulumi.Input<boolean>;
+}
+
+export interface NexusRepositoryYumHostedStorage {
+    blobStoreName: pulumi.Input<string>;
+    strictContentTypeValidation: pulumi.Input<boolean>;
+    writePolicy?: pulumi.Input<string>;
+}
+
+export interface NexusRepositoryYumProxyCleanup {
+    policyNames?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface NexusRepositoryYumProxyHttpClient {
+    authentication?: pulumi.Input<inputs.NexusRepositoryYumProxyHttpClientAuthentication>;
+    autoBlock?: pulumi.Input<boolean>;
+    blocked?: pulumi.Input<boolean>;
+    connection?: pulumi.Input<inputs.NexusRepositoryYumProxyHttpClientConnection>;
+}
+
+export interface NexusRepositoryYumProxyHttpClientAuthentication {
+    ntlmDomain?: pulumi.Input<string>;
+    ntlmHost?: pulumi.Input<string>;
+    password?: pulumi.Input<string>;
+    type: pulumi.Input<string>;
+    username?: pulumi.Input<string>;
+}
+
+export interface NexusRepositoryYumProxyHttpClientConnection {
+    enableCircularRedirects?: pulumi.Input<boolean>;
+    enableCookies?: pulumi.Input<boolean>;
+    retries?: pulumi.Input<number>;
+    timeout?: pulumi.Input<number>;
+    useTrustStore?: pulumi.Input<boolean>;
+    userAgentSuffix?: pulumi.Input<string>;
+}
+
+export interface NexusRepositoryYumProxyNegativeCache {
+    enabled?: pulumi.Input<boolean>;
+    ttl?: pulumi.Input<number>;
+}
+
+export interface NexusRepositoryYumProxyProxy {
+    contentMaxAge?: pulumi.Input<number>;
+    metadataMaxAge?: pulumi.Input<number>;
+    remoteUrl: pulumi.Input<string>;
+}
+
+export interface NexusRepositoryYumProxyStorage {
+    blobStoreName: pulumi.Input<string>;
+    strictContentTypeValidation?: pulumi.Input<boolean>;
+}
+
+export interface NexusRepositoryYumProxyYumSigning {
+    keypair: pulumi.Input<string>;
+    passphrase?: pulumi.Input<string>;
+}
+

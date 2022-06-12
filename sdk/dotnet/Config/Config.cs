@@ -4,7 +4,7 @@
 using System;
 using System.Collections.Immutable;
 
-namespace Pulumi.nexus
+namespace Pulumi.Nexus
 {
     public static class Config
     {
@@ -32,25 +32,45 @@ namespace Pulumi.nexus
 
         private static readonly Pulumi.Config __config = new Pulumi.Config("nexus");
 
-        private static readonly __Value<string?> _token = new __Value<string?>(() => __config.Get("token"));
+        private static readonly __Value<bool?> _insecure = new __Value<bool?>(() => __config.GetBoolean("insecure"));
         /// <summary>
-        /// A valid token for your 1Password Connect API. Can also be sourced from OP_CONNECT_TOKEN.
+        /// Boolean to specify wether insecure SSL connections are allowed or not. Reading environment variable
+        /// NEXUS_INSECURE_SKIP_VERIFY. Default:`true`
         /// </summary>
-        public static string? Token
+        public static bool? Insecure
         {
-            get => _token.Get();
-            set => _token.Set(value);
+            get => _insecure.Get();
+            set => _insecure.Set(value);
+        }
+
+        private static readonly __Value<string?> _password = new __Value<string?>(() => __config.Get("password"));
+        /// <summary>
+        /// Password of user to connect to API. Reading environment variable NEXUS_PASSWORD. Default:`admin123`
+        /// </summary>
+        public static string? Password
+        {
+            get => _password.Get();
+            set => _password.Set(value);
         }
 
         private static readonly __Value<string?> _url = new __Value<string?>(() => __config.Get("url"));
         /// <summary>
-        /// The HTTP(S) URL where your 1Password Connect API can be found. Must be provided through the the OP_CONNECT_HOST
-        /// environment variable if this attribute is not set.
+        /// URL of Nexus to reach API. Reading environment variable NEXUS_URL. Default:`http://127.0.0.1:8080`
         /// </summary>
         public static string? Url
         {
             get => _url.Get();
             set => _url.Set(value);
+        }
+
+        private static readonly __Value<string?> _username = new __Value<string?>(() => __config.Get("username"));
+        /// <summary>
+        /// Username used to connect to API. Reading environment variable NEXUS_USERNAME. Default:`admin`
+        /// </summary>
+        public static string? Username
+        {
+            get => _username.Get();
+            set => _username.Set(value);
         }
 
     }

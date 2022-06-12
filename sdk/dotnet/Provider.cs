@@ -7,7 +7,7 @@ using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
 
-namespace Pulumi.nexus
+namespace Pulumi.Nexus
 {
     /// <summary>
     /// The provider type for the nexus package. By default, resources use package-wide configuration
@@ -15,21 +15,26 @@ namespace Pulumi.nexus
     /// construction to achieve fine-grained programmatic control over provider settings. See the
     /// [documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.
     /// </summary>
-    [nexusResourceType("pulumi:providers:nexus")]
+    [NexusResourceType("pulumi:providers:nexus")]
     public partial class Provider : Pulumi.ProviderResource
     {
         /// <summary>
-        /// A valid token for your 1Password Connect API. Can also be sourced from OP_CONNECT_TOKEN.
+        /// Password of user to connect to API. Reading environment variable NEXUS_PASSWORD. Default:`admin123`
         /// </summary>
-        [Output("token")]
-        public Output<string> Token { get; private set; } = null!;
+        [Output("password")]
+        public Output<string> Password { get; private set; } = null!;
 
         /// <summary>
-        /// The HTTP(S) URL where your 1Password Connect API can be found. Must be provided through the the OP_CONNECT_HOST
-        /// environment variable if this attribute is not set.
+        /// URL of Nexus to reach API. Reading environment variable NEXUS_URL. Default:`http://127.0.0.1:8080`
         /// </summary>
         [Output("url")]
-        public Output<string?> Url { get; private set; } = null!;
+        public Output<string> Url { get; private set; } = null!;
+
+        /// <summary>
+        /// Username used to connect to API. Reading environment variable NEXUS_USERNAME. Default:`admin`
+        /// </summary>
+        [Output("username")]
+        public Output<string> Username { get; private set; } = null!;
 
 
         /// <summary>
@@ -61,17 +66,29 @@ namespace Pulumi.nexus
     public sealed class ProviderArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// A valid token for your 1Password Connect API. Can also be sourced from OP_CONNECT_TOKEN.
+        /// Boolean to specify wether insecure SSL connections are allowed or not. Reading environment variable
+        /// NEXUS_INSECURE_SKIP_VERIFY. Default:`true`
         /// </summary>
-        [Input("token", required: true)]
-        public Input<string> Token { get; set; } = null!;
+        [Input("insecure", json: true)]
+        public Input<bool>? Insecure { get; set; }
 
         /// <summary>
-        /// The HTTP(S) URL where your 1Password Connect API can be found. Must be provided through the the OP_CONNECT_HOST
-        /// environment variable if this attribute is not set.
+        /// Password of user to connect to API. Reading environment variable NEXUS_PASSWORD. Default:`admin123`
         /// </summary>
-        [Input("url")]
-        public Input<string>? Url { get; set; }
+        [Input("password", required: true)]
+        public Input<string> Password { get; set; } = null!;
+
+        /// <summary>
+        /// URL of Nexus to reach API. Reading environment variable NEXUS_URL. Default:`http://127.0.0.1:8080`
+        /// </summary>
+        [Input("url", required: true)]
+        public Input<string> Url { get; set; } = null!;
+
+        /// <summary>
+        /// Username used to connect to API. Reading environment variable NEXUS_USERNAME. Default:`admin`
+        /// </summary>
+        [Input("username", required: true)]
+        public Input<string> Username { get; set; } = null!;
 
         public ProviderArgs()
         {

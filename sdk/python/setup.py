@@ -39,7 +39,7 @@ def readme():
 
 setup(name='simcubeltd_pulumi_nexus',
       version=VERSION,
-      description="A Pulumi package for creating and managing nexus resources.",
+      description="A Pulumi package for creating and managing SonaType Nexus resources.",
       long_description=readme(),
       long_description_content_type='text/markdown',
       cmdclass={

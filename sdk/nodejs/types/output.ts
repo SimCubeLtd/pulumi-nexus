@@ -4,88 +4,904 @@
 import * as pulumi from "@pulumi/pulumi";
 import { input as inputs, output as outputs } from "../types";
 
-export interface GetItemSection {
-    fields: outputs.GetItemSectionField[];
-    id: string;
-    label: string;
+export interface GetNexusBlobstoreAzureBucketConfiguration {
+    accountName: string;
+    authentications: outputs.GetNexusBlobstoreAzureBucketConfigurationAuthentication[];
+    containerName: string;
 }
 
-export interface GetItemSectionField {
-    id: string;
-    label: string;
-    purpose: string;
-    /**
-     * (Only applies to the database category) The type of database. One of ["db2" "filemaker" "msaccess" "mssql" "mysql" "oracle" "postgresql" "sqlite" "other"]
-     */
+export interface GetNexusBlobstoreAzureBucketConfigurationAuthentication {
+    authenticationMethod: string;
+}
+
+export interface GetNexusBlobstoreAzureSoftQuota {
+    limit: number;
     type: string;
-    value: string;
 }
 
-export interface ItemPasswordRecipe {
-    /**
-     * Use digits [0-9] when generating the password.
-     */
-    digits?: boolean;
-    /**
-     * The length of the password to be generated.
-     */
-    length?: number;
-    /**
-     * Use letters [a-zA-Z] when generating the password.
-     */
-    letters?: boolean;
-    /**
-     * Use symbols [!@.-_*] when generating the password.
-     */
-    symbols?: boolean;
+export interface GetNexusBlobstoreBucketConfiguration {
+    advancedBucketConnection?: outputs.GetNexusBlobstoreBucketConfigurationAdvancedBucketConnection;
+    bucket: outputs.GetNexusBlobstoreBucketConfigurationBucket;
+    bucketSecurity: outputs.GetNexusBlobstoreBucketConfigurationBucketSecurity;
+    encryption?: outputs.GetNexusBlobstoreBucketConfigurationEncryption;
 }
 
-export interface ItemSection {
-    /**
-     * A list of custom fields in the section.
-     */
-    fields?: outputs.ItemSectionField[];
-    /**
-     * A unique identifier for the section.
-     */
-    id: string;
-    /**
-     * The label for the section.
-     */
-    label: string;
+export interface GetNexusBlobstoreBucketConfigurationAdvancedBucketConnection {
+    endpoint?: string;
+    forcePathStyle?: boolean;
+    signerType?: string;
 }
 
-export interface ItemSectionField {
-    id: string;
-    label: string;
-    /**
-     * Password for this item.
-     */
-    passwordRecipe?: outputs.ItemSectionFieldPasswordRecipe;
-    purpose?: string;
-    /**
-     * (Only applies to the database category) The type of database. One of ["db2" "filemaker" "msaccess" "mssql" "mysql" "oracle" "postgresql" "sqlite" "other"]
-     */
+export interface GetNexusBlobstoreBucketConfigurationBucket {
+    expiration?: number;
+    name: string;
+    prefix?: string;
+    region: string;
+}
+
+export interface GetNexusBlobstoreBucketConfigurationBucketSecurity {
+    accessKeyId: string;
+    role?: string;
+    secretAccessKey: string;
+    sessionToken?: string;
+}
+
+export interface GetNexusBlobstoreBucketConfigurationEncryption {
+    encryptionKey?: string;
+    encryptionType?: string;
+}
+
+export interface GetNexusBlobstoreFileSoftQuota {
+    limit: number;
+    type: string;
+}
+
+export interface GetNexusBlobstoreGroupSoftQuota {
+    limit: number;
+    type: string;
+}
+
+export interface GetNexusBlobstoreS3BucketConfiguration {
+    advancedBucketConnections: outputs.GetNexusBlobstoreS3BucketConfigurationAdvancedBucketConnection[];
+    bucketSecurities: outputs.GetNexusBlobstoreS3BucketConfigurationBucketSecurity[];
+    buckets: outputs.GetNexusBlobstoreS3BucketConfigurationBucket[];
+    encryptions: outputs.GetNexusBlobstoreS3BucketConfigurationEncryption[];
+}
+
+export interface GetNexusBlobstoreS3BucketConfigurationAdvancedBucketConnection {
+    endpoint: string;
+    forcePathStyle: boolean;
+    signerType: string;
+}
+
+export interface GetNexusBlobstoreS3BucketConfigurationBucket {
+    expiration: number;
+    name: string;
+    prefix: string;
+    region: string;
+}
+
+export interface GetNexusBlobstoreS3BucketConfigurationBucketSecurity {
+    accessKeyId: string;
+    role: string;
+    secretAccessKey: string;
+    sessionToken: string;
+}
+
+export interface GetNexusBlobstoreS3BucketConfigurationEncryption {
+    encryptionKey: string;
+    encryptionType: string;
+}
+
+export interface GetNexusBlobstoreS3SoftQuota {
+    limit: number;
+    type: string;
+}
+
+export interface GetNexusBlobstoreSoftQuota {
+    limit?: number;
     type?: string;
-    value: string;
 }
 
-export interface ItemSectionFieldPasswordRecipe {
-    /**
-     * Use digits [0-9] when generating the password.
-     */
-    digits?: boolean;
-    /**
-     * The length of the password to be generated.
-     */
-    length?: number;
-    /**
-     * Use letters [a-zA-Z] when generating the password.
-     */
-    letters?: boolean;
-    /**
-     * Use symbols [!@.-_*] when generating the password.
-     */
-    symbols?: boolean;
+export interface GetNexusPrivilegesPrivilege {
+    actions: string[];
+    contentSelector: string;
+    description: string;
+    domain: string;
+    format: string;
+    name: string;
+    pattern: boolean;
+    readOnly: boolean;
+    repository: string;
+    type: string;
+}
+
+export interface GetNexusRepositoryApt {
+    distribution: string;
+}
+
+export interface GetNexusRepositoryAptHostedCleanup {
+    policyNames: string[];
+}
+
+export interface GetNexusRepositoryAptHostedComponent {
+    proprietaryComponents: boolean;
+}
+
+export interface GetNexusRepositoryAptHostedStorage {
+    blobStoreName: string;
+    strictContentTypeValidation: boolean;
+    writePolicy: string;
+}
+
+export interface GetNexusRepositoryAptProxyCleanup {
+    policyNames: string[];
+}
+
+export interface GetNexusRepositoryAptProxyHttpClient {
+    authentications: outputs.GetNexusRepositoryAptProxyHttpClientAuthentication[];
+    autoBlock: boolean;
+    blocked: boolean;
+    connections: outputs.GetNexusRepositoryAptProxyHttpClientConnection[];
+}
+
+export interface GetNexusRepositoryAptProxyHttpClientAuthentication {
+    ntlmDomain: string;
+    ntlmHost: string;
+    password: string;
+    type: string;
+    username: string;
+}
+
+export interface GetNexusRepositoryAptProxyHttpClientConnection {
+    enableCircularRedirects: boolean;
+    enableCookies: boolean;
+    retries: number;
+    timeout: number;
+    useTrustStore: boolean;
+    userAgentSuffix: string;
+}
+
+export interface GetNexusRepositoryAptProxyNegativeCach {
+    enabled: boolean;
+    ttl: number;
+}
+
+export interface GetNexusRepositoryAptProxyProxy {
+    contentMaxAge: number;
+    metadataMaxAge: number;
+    remoteUrl: string;
+}
+
+export interface GetNexusRepositoryAptProxyStorage {
+    blobStoreName: string;
+    strictContentTypeValidation: boolean;
+}
+
+export interface GetNexusRepositoryAptSigning {
+    keypair: string;
+    passphrase: string;
+}
+
+export interface GetNexusRepositoryCleanup {
+    policyNames: string[];
+}
+
+export interface GetNexusRepositoryDocker {
+    forceBasicAuth?: boolean;
+    httpPort?: number;
+    httpsPort?: number;
+    v1enabled?: boolean;
+}
+
+export interface GetNexusRepositoryDockerGroupDocker {
+    forceBasicAuth: boolean;
+    httpPort: number;
+    httpsPort: number;
+    v1Enabled: boolean;
+}
+
+export interface GetNexusRepositoryDockerGroupGroup {
+    memberNames: string[];
+    writableMember: string;
+}
+
+export interface GetNexusRepositoryDockerGroupStorage {
+    blobStoreName: string;
+    strictContentTypeValidation: boolean;
+}
+
+export interface GetNexusRepositoryDockerHostedCleanup {
+    policyNames: string[];
+}
+
+export interface GetNexusRepositoryDockerHostedComponent {
+    proprietaryComponents: boolean;
+}
+
+export interface GetNexusRepositoryDockerHostedDocker {
+    forceBasicAuth: boolean;
+    httpPort: number;
+    httpsPort: number;
+    v1Enabled: boolean;
+}
+
+export interface GetNexusRepositoryDockerHostedStorage {
+    blobStoreName: string;
+    strictContentTypeValidation: boolean;
+    writePolicy: string;
+}
+
+export interface GetNexusRepositoryDockerProxyCleanup {
+    policyNames: string[];
+}
+
+export interface GetNexusRepositoryDockerProxyDocker {
+    forceBasicAuth: boolean;
+    httpPort: number;
+    httpsPort: number;
+    v1Enabled: boolean;
+}
+
+export interface GetNexusRepositoryDockerProxyDockerProxy {
+    indexType: string;
+    indexUrl: string;
+}
+
+export interface GetNexusRepositoryDockerProxyHttpClient {
+    authentications: outputs.GetNexusRepositoryDockerProxyHttpClientAuthentication[];
+    autoBlock: boolean;
+    blocked: boolean;
+    connections: outputs.GetNexusRepositoryDockerProxyHttpClientConnection[];
+}
+
+export interface GetNexusRepositoryDockerProxyHttpClientAuthentication {
+    ntlmDomain: string;
+    ntlmHost: string;
+    password: string;
+    type: string;
+    username: string;
+}
+
+export interface GetNexusRepositoryDockerProxyHttpClientConnection {
+    enableCircularRedirects: boolean;
+    enableCookies: boolean;
+    retries: number;
+    timeout: number;
+    useTrustStore: boolean;
+    userAgentSuffix: string;
+}
+
+export interface GetNexusRepositoryDockerProxyNegativeCach {
+    enabled: boolean;
+    ttl: number;
+}
+
+export interface GetNexusRepositoryDockerProxyProxy {
+    contentMaxAge: number;
+    metadataMaxAge: number;
+    remoteUrl: string;
+}
+
+export interface GetNexusRepositoryDockerProxyStorage {
+    blobStoreName: string;
+    strictContentTypeValidation: boolean;
+}
+
+export interface GetNexusRepositoryGroup {
+    memberNames: string[];
+}
+
+export interface GetNexusRepositoryHttpClient {
+    authentication?: outputs.GetNexusRepositoryHttpClientAuthentication;
+    autoBlock?: boolean;
+    blocked?: boolean;
+    connections?: outputs.GetNexusRepositoryHttpClientConnection[];
+}
+
+export interface GetNexusRepositoryHttpClientAuthentication {
+    ntlmDomain?: string;
+    ntlmHost?: string;
+    type: string;
+    username?: string;
+}
+
+export interface GetNexusRepositoryHttpClientConnection {
+    retries?: number;
+    timeout?: number;
+}
+
+export interface GetNexusRepositoryListItem {
+    format: string;
+    name: string;
+    type: string;
+    url: string;
+}
+
+export interface GetNexusRepositoryMaven {
+    layoutPolicy?: string;
+    versionPolicy?: string;
+}
+
+export interface GetNexusRepositoryNegativeCache {
+    enabled?: boolean;
+    ttl?: number;
+}
+
+export interface GetNexusRepositoryProxy {
+    contentMaxAge?: number;
+    metadataMaxAge?: number;
+    remoteUrl: string;
+}
+
+export interface GetNexusRepositoryStorage {
+    blobStoreName?: string;
+    strictContentTypeValidation?: boolean;
+    writePolicy?: string;
+}
+
+export interface GetNexusRepositoryYumGroupGroup {
+    memberNames: string[];
+}
+
+export interface GetNexusRepositoryYumGroupStorage {
+    blobStoreName: string;
+    strictContentTypeValidation: boolean;
+}
+
+export interface GetNexusRepositoryYumGroupYumSigning {
+    keypair: string;
+    passphrase: string;
+}
+
+export interface GetNexusRepositoryYumHostedCleanup {
+    policyNames: string[];
+}
+
+export interface GetNexusRepositoryYumHostedComponent {
+    proprietaryComponents: boolean;
+}
+
+export interface GetNexusRepositoryYumHostedStorage {
+    blobStoreName: string;
+    strictContentTypeValidation: boolean;
+    writePolicy: string;
+}
+
+export interface GetNexusRepositoryYumProxyCleanup {
+    policyNames: string[];
+}
+
+export interface GetNexusRepositoryYumProxyHttpClient {
+    authentications: outputs.GetNexusRepositoryYumProxyHttpClientAuthentication[];
+    autoBlock: boolean;
+    blocked: boolean;
+    connections: outputs.GetNexusRepositoryYumProxyHttpClientConnection[];
+}
+
+export interface GetNexusRepositoryYumProxyHttpClientAuthentication {
+    ntlmDomain: string;
+    ntlmHost: string;
+    password: string;
+    type: string;
+    username: string;
+}
+
+export interface GetNexusRepositoryYumProxyHttpClientConnection {
+    enableCircularRedirects: boolean;
+    enableCookies: boolean;
+    retries: number;
+    timeout: number;
+    useTrustStore: boolean;
+    userAgentSuffix: string;
+}
+
+export interface GetNexusRepositoryYumProxyNegativeCach {
+    enabled: boolean;
+    ttl: number;
+}
+
+export interface GetNexusRepositoryYumProxyProxy {
+    contentMaxAge: number;
+    metadataMaxAge: number;
+    remoteUrl: string;
+}
+
+export interface GetNexusRepositoryYumProxyStorage {
+    blobStoreName: string;
+    strictContentTypeValidation: boolean;
+}
+
+export interface GetNexusRepositoryYumProxyYumSigning {
+    keypair: string;
+    passphrase: string;
+}
+
+export interface GetNexusSecurityLdapLdap {
+    authPassword: string;
+    authRealm: string;
+    authSchema: string;
+    authUsername: string;
+    connectionRetryDelaySeconds: number;
+    connectionTimeoutSeconds: number;
+    groupBaseDn: string;
+    groupIdAttribute: string;
+    groupMemberAttribute: string;
+    groupMemberFormat: string;
+    groupObjectClass: string;
+    groupSubtree: string;
+    groupType: string;
+    host: string;
+    id: string;
+    ldapGroupsAsRoles: boolean;
+    maxIncidentCount: number;
+    name: string;
+    port: number;
+    protocol: string;
+    searchBase: string;
+    useTrustStore: boolean;
+    userBaseDn: string;
+    userEmailAddressAttribute: string;
+    userIdAttribute: string;
+    userLdapFilter: string;
+    userMemberOfAttribute: string;
+    userObjectClass: string;
+    userPasswordAttribute: string;
+    userRealNameAttribute: string;
+    userSubtree: boolean;
+}
+
+export interface GetNexusSecurityRealmsActive {
+    id: string;
+    name: string;
+}
+
+export interface GetNexusSecurityRealmsAvailable {
+    id: string;
+    name: string;
+}
+
+export interface NexusBlobstoreAzureBucketConfiguration {
+    accountName: string;
+    authentication: outputs.NexusBlobstoreAzureBucketConfigurationAuthentication;
+    containerName: string;
+}
+
+export interface NexusBlobstoreAzureBucketConfigurationAuthentication {
+    accountKey?: string;
+    authenticationMethod: string;
+}
+
+export interface NexusBlobstoreAzureSoftQuota {
+    limit: number;
+    type: string;
+}
+
+export interface NexusBlobstoreBucketConfiguration {
+    advancedBucketConnection?: outputs.NexusBlobstoreBucketConfigurationAdvancedBucketConnection;
+    bucket: outputs.NexusBlobstoreBucketConfigurationBucket;
+    bucketSecurity?: outputs.NexusBlobstoreBucketConfigurationBucketSecurity;
+    encryption?: outputs.NexusBlobstoreBucketConfigurationEncryption;
+}
+
+export interface NexusBlobstoreBucketConfigurationAdvancedBucketConnection {
+    endpoint?: string;
+    forcePathStyle?: boolean;
+    signerType?: string;
+}
+
+export interface NexusBlobstoreBucketConfigurationBucket {
+    expiration?: number;
+    name: string;
+    prefix?: string;
+    region: string;
+}
+
+export interface NexusBlobstoreBucketConfigurationBucketSecurity {
+    accessKeyId: string;
+    role?: string;
+    secretAccessKey: string;
+    sessionToken?: string;
+}
+
+export interface NexusBlobstoreBucketConfigurationEncryption {
+    encryptionKey?: string;
+    encryptionType?: string;
+}
+
+export interface NexusBlobstoreFileSoftQuota {
+    limit: number;
+    type: string;
+}
+
+export interface NexusBlobstoreGroupSoftQuota {
+    limit: number;
+    type: string;
+}
+
+export interface NexusBlobstoreS3BucketConfiguration {
+    advancedBucketConnection?: outputs.NexusBlobstoreS3BucketConfigurationAdvancedBucketConnection;
+    bucket: outputs.NexusBlobstoreS3BucketConfigurationBucket;
+    bucketSecurity?: outputs.NexusBlobstoreS3BucketConfigurationBucketSecurity;
+    encryption?: outputs.NexusBlobstoreS3BucketConfigurationEncryption;
+}
+
+export interface NexusBlobstoreS3BucketConfigurationAdvancedBucketConnection {
+    endpoint?: string;
+    forcePathStyle?: boolean;
+    maxConnectionPoolSize?: number;
+    signerType?: string;
+}
+
+export interface NexusBlobstoreS3BucketConfigurationBucket {
+    expiration: number;
+    name: string;
+    prefix?: string;
+    region: string;
+}
+
+export interface NexusBlobstoreS3BucketConfigurationBucketSecurity {
+    accessKeyId?: string;
+    role?: string;
+    secretAccessKey?: string;
+    sessionToken?: string;
+}
+
+export interface NexusBlobstoreS3BucketConfigurationEncryption {
+    encryptionKey?: string;
+    encryptionType?: string;
+}
+
+export interface NexusBlobstoreS3SoftQuota {
+    limit: number;
+    type: string;
+}
+
+export interface NexusBlobstoreSoftQuota {
+    limit: number;
+    type: string;
+}
+
+export interface NexusRepositoryApt {
+    distribution: string;
+    flat?: boolean;
+}
+
+export interface NexusRepositoryAptHostedCleanup {
+    policyNames?: string[];
+}
+
+export interface NexusRepositoryAptHostedComponent {
+    proprietaryComponents: boolean;
+}
+
+export interface NexusRepositoryAptHostedSigning {
+    keypair: string;
+    passphrase?: string;
+}
+
+export interface NexusRepositoryAptHostedStorage {
+    blobStoreName: string;
+    strictContentTypeValidation: boolean;
+    writePolicy?: string;
+}
+
+export interface NexusRepositoryAptProxyCleanup {
+    policyNames?: string[];
+}
+
+export interface NexusRepositoryAptProxyHttpClient {
+    authentication?: outputs.NexusRepositoryAptProxyHttpClientAuthentication;
+    autoBlock?: boolean;
+    blocked?: boolean;
+    connection: outputs.NexusRepositoryAptProxyHttpClientConnection;
+}
+
+export interface NexusRepositoryAptProxyHttpClientAuthentication {
+    ntlmDomain?: string;
+    ntlmHost?: string;
+    password?: string;
+    type: string;
+    username?: string;
+}
+
+export interface NexusRepositoryAptProxyHttpClientConnection {
+    enableCircularRedirects?: boolean;
+    enableCookies?: boolean;
+    retries?: number;
+    timeout?: number;
+    useTrustStore?: boolean;
+    userAgentSuffix?: string;
+}
+
+export interface NexusRepositoryAptProxyNegativeCache {
+    enabled?: boolean;
+    ttl?: number;
+}
+
+export interface NexusRepositoryAptProxyProxy {
+    contentMaxAge?: number;
+    metadataMaxAge?: number;
+    remoteUrl: string;
+}
+
+export interface NexusRepositoryAptProxyStorage {
+    blobStoreName: string;
+    strictContentTypeValidation?: boolean;
+}
+
+export interface NexusRepositoryAptSigning {
+    keypair: string;
+    passphrase: string;
+}
+
+export interface NexusRepositoryBower {
+    rewritePackageUrls?: boolean;
+}
+
+export interface NexusRepositoryCleanup {
+    policyNames?: string[];
+}
+
+export interface NexusRepositoryDocker {
+    forceBasicAuth?: boolean;
+    httpPort?: number;
+    httpsPort?: number;
+    v1enabled?: boolean;
+}
+
+export interface NexusRepositoryDockerGroupDocker {
+    forceBasicAuth: boolean;
+    httpPort?: number;
+    httpsPort?: number;
+    v1Enabled: boolean;
+}
+
+export interface NexusRepositoryDockerGroupGroup {
+    memberNames: string[];
+    writableMember?: string;
+}
+
+export interface NexusRepositoryDockerGroupStorage {
+    blobStoreName: string;
+    strictContentTypeValidation?: boolean;
+}
+
+export interface NexusRepositoryDockerHostedCleanup {
+    policyNames?: string[];
+}
+
+export interface NexusRepositoryDockerHostedComponent {
+    proprietaryComponents: boolean;
+}
+
+export interface NexusRepositoryDockerHostedDocker {
+    forceBasicAuth: boolean;
+    httpPort?: number;
+    httpsPort?: number;
+    v1Enabled: boolean;
+}
+
+export interface NexusRepositoryDockerHostedStorage {
+    blobStoreName: string;
+    strictContentTypeValidation: boolean;
+    writePolicy?: string;
+}
+
+export interface NexusRepositoryDockerProxy {
+    indexType: string;
+    indexUrl?: string;
+}
+
+export interface NexusRepositoryDockerProxyCleanup {
+    policyNames?: string[];
+}
+
+export interface NexusRepositoryDockerProxyDocker {
+    forceBasicAuth: boolean;
+    httpPort?: number;
+    httpsPort?: number;
+    v1Enabled: boolean;
+}
+
+export interface NexusRepositoryDockerProxyDockerProxy {
+    indexType: string;
+    indexUrl?: string;
+}
+
+export interface NexusRepositoryDockerProxyHttpClient {
+    authentication?: outputs.NexusRepositoryDockerProxyHttpClientAuthentication;
+    autoBlock?: boolean;
+    blocked?: boolean;
+    connection: outputs.NexusRepositoryDockerProxyHttpClientConnection;
+}
+
+export interface NexusRepositoryDockerProxyHttpClientAuthentication {
+    ntlmDomain?: string;
+    ntlmHost?: string;
+    password?: string;
+    type: string;
+    username?: string;
+}
+
+export interface NexusRepositoryDockerProxyHttpClientConnection {
+    enableCircularRedirects?: boolean;
+    enableCookies?: boolean;
+    retries?: number;
+    timeout?: number;
+    useTrustStore?: boolean;
+    userAgentSuffix?: string;
+}
+
+export interface NexusRepositoryDockerProxyNegativeCache {
+    enabled?: boolean;
+    ttl?: number;
+}
+
+export interface NexusRepositoryDockerProxyProxy {
+    contentMaxAge?: number;
+    metadataMaxAge?: number;
+    remoteUrl: string;
+}
+
+export interface NexusRepositoryDockerProxyStorage {
+    blobStoreName: string;
+    strictContentTypeValidation?: boolean;
+}
+
+export interface NexusRepositoryGroup {
+    memberNames: string[];
+}
+
+export interface NexusRepositoryHttpClient {
+    authentication?: outputs.NexusRepositoryHttpClientAuthentication;
+    autoBlock?: boolean;
+    blocked?: boolean;
+    connection?: outputs.NexusRepositoryHttpClientConnection;
+}
+
+export interface NexusRepositoryHttpClientAuthentication {
+    ntlmDomain?: string;
+    ntlmHost?: string;
+    password?: string;
+    type?: string;
+    username?: string;
+}
+
+export interface NexusRepositoryHttpClientConnection {
+    enableCookies?: boolean;
+    retries?: number;
+    timeout?: number;
+    useTrustStore?: boolean;
+    userAgentSuffix?: string;
+}
+
+export interface NexusRepositoryMaven {
+    layoutPolicy?: string;
+    versionPolicy?: string;
+}
+
+export interface NexusRepositoryMavenHostedCleanup {
+    policyNames?: string[];
+}
+
+export interface NexusRepositoryMavenHostedComponent {
+    proprietaryComponents: boolean;
+}
+
+export interface NexusRepositoryMavenHostedMaven {
+    contentDisposition?: string;
+    layoutPolicy?: string;
+    versionPolicy?: string;
+}
+
+export interface NexusRepositoryMavenHostedStorage {
+    blobStoreName: string;
+    strictContentTypeValidation: boolean;
+    writePolicy?: string;
+}
+
+export interface NexusRepositoryNegativeCache {
+    enabled?: boolean;
+    ttl?: number;
+}
+
+export interface NexusRepositoryNugetProxy {
+    nugetVersion?: string;
+    queryCacheItemMaxAge: number;
+}
+
+export interface NexusRepositoryProxy {
+    contentMaxAge?: number;
+    metadataMaxAge?: number;
+    remoteUrl?: string;
+}
+
+export interface NexusRepositoryStorage {
+    blobStoreName?: string;
+    strictContentTypeValidation?: boolean;
+    writePolicy?: string;
+}
+
+export interface NexusRepositoryYum {
+    deployPolicy: string;
+    repodataDepth?: number;
+}
+
+export interface NexusRepositoryYumGroupGroup {
+    memberNames: string[];
+}
+
+export interface NexusRepositoryYumGroupStorage {
+    blobStoreName: string;
+    strictContentTypeValidation?: boolean;
+}
+
+export interface NexusRepositoryYumGroupYumSigning {
+    keypair: string;
+    passphrase?: string;
+}
+
+export interface NexusRepositoryYumHostedCleanup {
+    policyNames?: string[];
+}
+
+export interface NexusRepositoryYumHostedComponent {
+    proprietaryComponents: boolean;
+}
+
+export interface NexusRepositoryYumHostedStorage {
+    blobStoreName: string;
+    strictContentTypeValidation: boolean;
+    writePolicy?: string;
+}
+
+export interface NexusRepositoryYumProxyCleanup {
+    policyNames?: string[];
+}
+
+export interface NexusRepositoryYumProxyHttpClient {
+    authentication?: outputs.NexusRepositoryYumProxyHttpClientAuthentication;
+    autoBlock?: boolean;
+    blocked?: boolean;
+    connection: outputs.NexusRepositoryYumProxyHttpClientConnection;
+}
+
+export interface NexusRepositoryYumProxyHttpClientAuthentication {
+    ntlmDomain?: string;
+    ntlmHost?: string;
+    password?: string;
+    type: string;
+    username?: string;
+}
+
+export interface NexusRepositoryYumProxyHttpClientConnection {
+    enableCircularRedirects?: boolean;
+    enableCookies?: boolean;
+    retries?: number;
+    timeout?: number;
+    useTrustStore?: boolean;
+    userAgentSuffix?: string;
+}
+
+export interface NexusRepositoryYumProxyNegativeCache {
+    enabled?: boolean;
+    ttl?: number;
+}
+
+export interface NexusRepositoryYumProxyProxy {
+    contentMaxAge?: number;
+    metadataMaxAge?: number;
+    remoteUrl: string;
+}
+
+export interface NexusRepositoryYumProxyStorage {
+    blobStoreName: string;
+    strictContentTypeValidation?: boolean;
+}
+
+export interface NexusRepositoryYumProxyYumSigning {
+    keypair: string;
+    passphrase?: string;
 }
 

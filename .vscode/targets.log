@@ -1,80 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-Error: error calculating version: getting language versions: error resolving commitish to reference: reference not found
-
-Usage:
-  pulumictl get version [flags]
-
-Flags:
-  -h, --help                    help for version
-      --is-prerelease           whether this is a pre-release version
-  -p, --language string         the platform for which the version should be output.
-  -o, --omit-commit-hash        whether to include or omit the commit hash in the version
-  -r, --repo string             path to repository, defaults to current working directory
-      --tag-pattern string      regex pattern to filter tags with (e.g. ^sdk/)
-      --version-prefix string   the version prefix (e.g. 3.0.0). Must be valid semver.
-
-Global Flags:
-  -D, --debug          enable debug logging
-  -t, --token string   a github token to use for making API calls to GitHub.
-
-error calculating version: getting language versions: error resolving commitish to reference: reference not found
-Error: error calculating version: getting language versions: error resolving commitish to reference: reference not found
-
-Usage:
-  pulumictl get version [flags]
-
-Flags:
-  -h, --help                    help for version
-      --is-prerelease           whether this is a pre-release version
-  -p, --language string         the platform for which the version should be output.
-  -o, --omit-commit-hash        whether to include or omit the commit hash in the version
-  -r, --repo string             path to repository, defaults to current working directory
-      --tag-pattern string      regex pattern to filter tags with (e.g. ^sdk/)
-      --version-prefix string   the version prefix (e.g. 3.0.0). Must be valid semver.
-
-Global Flags:
-  -D, --debug          enable debug logging
-  -t, --token string   a github token to use for making API calls to GitHub.
-
-error calculating version: getting language versions: error resolving commitish to reference: reference not found
-Error: error calculating version: getting language versions: error resolving commitish to reference: reference not found
-
-Usage:
-  pulumictl get version [flags]
-
-Flags:
-  -h, --help                    help for version
-      --is-prerelease           whether this is a pre-release version
-  -p, --language string         the platform for which the version should be output.
-  -o, --omit-commit-hash        whether to include or omit the commit hash in the version
-  -r, --repo string             path to repository, defaults to current working directory
-      --tag-pattern string      regex pattern to filter tags with (e.g. ^sdk/)
-      --version-prefix string   the version prefix (e.g. 3.0.0). Must be valid semver.
-
-Global Flags:
-  -D, --debug          enable debug logging
-  -t, --token string   a github token to use for making API calls to GitHub.
-
-error calculating version: getting language versions: error resolving commitish to reference: reference not found
-Error: error calculating version: getting language versions: error resolving commitish to reference: reference not found
-
-Usage:
-  pulumictl get version [flags]
-
-Flags:
-  -h, --help                    help for version
-      --is-prerelease           whether this is a pre-release version
-  -p, --language string         the platform for which the version should be output.
-  -o, --omit-commit-hash        whether to include or omit the commit hash in the version
-  -r, --repo string             path to repository, defaults to current working directory
-      --tag-pattern string      regex pattern to filter tags with (e.g. ^sdk/)
-      --version-prefix string   the version prefix (e.g. 3.0.0). Must be valid semver.
-
-Global Flags:
-  -D, --debug          enable debug logging
-  -t, --token string   a github token to use for making API calls to GitHub.
-
-error calculating version: getting language versions: error resolving commitish to reference: reference not found
 make: *** No rule to make target 'all'.  Stop.
 
 # GNU Make 4.2.1
@@ -84,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Jun 12 20:28:49 2022
+# Make data base, printed on Sun Jun 12 21:04:00 2022
 
 # Variables
 
@@ -127,7 +51,7 @@ GNUMAKEFLAGS :=
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # makefile (from 'Makefile', line 14)
-VERSION := 
+VERSION := 0.0.1-alpha.1655062654+dfa4111c.dirty
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # makefile (from 'Makefile', line 21)
@@ -157,7 +81,7 @@ NVM_BIN = /home/prom3theu5/.nvm/versions/node/v14.19.3/bin
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-b7777be2-9ef8-48df-a23b-0945292190f3.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-dd9edcb7-bb32-47be-b4f7-458c8a1dafcf.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # automatic
@@ -185,7 +109,7 @@ HOME = /home/prom3theu5
 # environment
 LOGNAME = prom3theu5
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 NVM_CD_FLAGS = -q
 # environment
@@ -308,9 +232,9 @@ STARSHIP_SHELL = zsh
 # Files
 
 # makefile (from 'Makefile', line 60)
-build_nodejs: VERSION := 
+build_nodejs: VERSION := v0.0.1-alpha.1655062654+dfa4111c.dirty
 # 'override' directive
-build_nodejs: .SHELLSTATUS := 1
+build_nodejs: .SHELLSTATUS := 0
 build_nodejs:: install_plugins tfgen
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
@@ -356,8 +280,8 @@ install_nodejs_sdk::
 	yarn link --cwd $(WORKING_DIR)/sdk/nodejs/bin
 
 build_go:: install_plugins tfgen
-#  Phony target (prerequisite of .PHONY).
  
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
@@ -367,7 +291,7 @@ build_go:: install_plugins tfgen
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-12 20:27:01.143010823
+#  Last modified 2022-06-12 20:28:56.873010738
 #  File has been updated.
 #  Successfully updated.
 
@@ -388,9 +312,9 @@ tfgen:: install_plugins
 	(cd provider && VERSION=$(VERSION) go generate cmd/${PROVIDER}/main.go)
 
 # makefile (from 'Makefile', line 70)
-build_python: PYPI_VERSION := 
+build_python: PYPI_VERSION := 0.0.1a1655062654+dirty
 # 'override' directive
-build_python: .SHELLSTATUS := 1
+build_python: .SHELLSTATUS := 0
 build_python:: install_plugins tfgen
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
@@ -485,9 +409,9 @@ install_python_sdk::
 #  File has not been updated.
 
 # makefile (from 'Makefile', line 81)
-build_dotnet: DOTNET_VERSION := 
+build_dotnet: DOTNET_VERSION := 0.0.1-alpha.1655062654+dfa4111c.dirty
 # 'override' directive
-build_dotnet: .SHELLSTATUS := 1
+build_dotnet: .SHELLSTATUS := 0
 build_dotnet:: install_plugins tfgen
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
@@ -550,6 +474,6 @@ install_dotnet_sdk::
 # strcache performance: lookups = 114 / hit rate = 62%
 # hash-table stats:
 # Load=43/8192=1%, Rehash=0, Collisions=1/114=1%
-# Finished Make data base on Sun Jun 12 20:28:49 2022
+# Finished Make data base on Sun Jun 12 21:04:00 2022
 
  
